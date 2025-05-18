@@ -14,41 +14,41 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-        padding-top: 70px;
-        /* Sesuaikan dengan tinggi navbar Anda */
-        background: #a2dbff;
+      padding-top: 70px;
+      /* Sesuaikan dengan tinggi navbar Anda */
+      background: #c4c3fb;
     }
+
     .content {
-        margin-top: 70px;
-        /* Sesuaikan dengan tinggi navbar Anda */
-        padding-bottom: 20px;
-        /* Atur padding di bagian bawah jika diperlukan */
+      margin-top: 70px;
+      /* Sesuaikan dengan tinggi navbar Anda */
+      padding-bottom: 20px;
+      /* Atur padding di bagian bawah jika diperlukan */
     }
 
     #map {
-        height: 97.5vh;
+      height: 97.5vh;
     }
 
     .info {
-        padding: 6px 8px;
-        font: 14px/16px Arial, Helvetica, sans-serif;
-        background: rgb(255, 255, 255);
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 0 15px rgba(3, 3, 3, 0.2);
-        border-radius: 5px;
-        text-align: center;
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: rgb(255, 255, 255);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 15px rgba(3, 3, 3, 0.2);
+      border-radius: 5px;
+      text-align: center;
     }
 
     .info h2 {
-        margin: 0 0 5px;
-        color: #fbfbfb;
+      margin: 0 0 5px;
+      color: #fbfbfb;
     }
 
     .text-biru-muda {
-    color: #5981b1; 
-  }
-  
-</style>
+      color: #5981b1;
+    }
+  </style>
 </head>
 </head>
 
@@ -57,10 +57,10 @@
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI<span class="text-primary"></span></a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+      <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI<span class="text-primary"></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -79,7 +79,7 @@
           <li class="nav-item">
             <a class="nav-link" href="peta_RS.html">Tentang</a>
           </li>
-            </ul>
+        </ul>
         </ul>
       </div>
     </div>
@@ -101,7 +101,7 @@
         <div class="carousel-caption">
           <h5>SIGAP TSUNAMI</h5>
           <h2>Dashboard Informasi Tanggap Bencana Tsunami</h2>
-          <p>Dashboard ini menyajikan informasi terkait bencana tsunami di Daerah Istimewa Yogyakarta. 
+          <p>Dashboard ini menyajikan informasi terkait bencana tsunami di Daerah Istimewa Yogyakarta.
             Berisi informasi umum terkait tsunami serta informasi lokasi dampak tsunami</p>
         </div>
       </div>
@@ -132,39 +132,100 @@
     </button>
   </div>
 
-<!-- about -->
-<section id="about" class="about-section py-5"> <!-- Added vertical padding -->
-  <div class="container-fluid px-lg-5"> <!-- Full-width container with horizontal padding -->
-    <div class="row justify-content-center mx-lg-5"> <!-- Added horizontal margins on large screens -->
-      <div class="col-12"> <!-- Full width column -->
-        <div class="card shadow-sm p-4 p-lg-5"> <!-- Increased padding on large screens -->
-          <div class="row align-items-center g-4 g-lg-5"> <!-- Increased gutter on large screens -->
-            
-            <!-- Image Column -->
-            <div class="col-lg-6"> <!-- Changed to col-lg for better control -->
-              <div class="d-flex flex-column gap-4 gap-lg-5"> <!-- Responsive gap -->
-                <div class="text-center">
-                  <img src="assets/H1.gif" alt="Tsunami illustration" class="img-fluid rounded">
+  <!-- about -->
+  <section id="about" class="about-section py-5"> <!-- Added vertical padding -->
+    <div class="container-fluid px-lg-5"> <!-- Full-width container with horizontal padding -->
+      <div class="row justify-content-center mx-lg-5"> <!-- Added horizontal margins on large screens -->
+        <div class="col-12"> <!-- Full width column -->
+          <div class="card shadow-sm p-4 p-lg-5"> <!-- Increased padding on large screens -->
+            <div class="row align-items-center g-4 g-lg-5"> <!-- Increased gutter on large screens -->
+
+              <!-- Image Column -->
+              <div class="col-lg-6"> <!-- Changed to col-lg for better control -->
+                <div class="d-flex flex-column gap-4 gap-lg-5"> <!-- Responsive gap -->
+                  <div class="text-center">
+                    <img src="assets/H1.gif" alt="Tsunami illustration" class="img-fluid rounded">
+                  </div>
+                  <div class="text-center">
+                    <img src="assets/INATEWS.jpg" alt="INATEWS system" class="img-fluid rounded">
+                  </div>
                 </div>
-                <div class="text-center">
-                  <img src="assets/INATEWS.jpg" alt="INATEWS system" class="img-fluid rounded">
+              </div>
+
+              <!-- Text Column -->
+              <div class="col-lg-6">
+                <div class="ps-lg-4"> <!-- Adjusted padding -->
+                  <h2 class="fw-bold mb-4 display-5">APA ITU TSUNAMI?</h2> <!-- Larger heading -->
+                  <p class="text-justify mb-4 fs-5"> <!-- Slightly larger text -->
+                    Tsunami adalah gelombang laut yang terjadi karena adanya gangguan impulsif pada laut. Gangguan
+                    impulsif tersebut terjadi akibat adanya perubahan
+                    bentuk dasar laut secara tiba-tiba dalam arah vertikal (Pond and Pickard, 1983) atau dalam arah
+                    horizontal (Tanioka and Satake, 1995).
+                    Perubahan tersebut disebabkan oleh tiga sumber utama, yaitu gempa tektonik, letusan gunung api, atau
+                    longsoran yang terjadi di dasar laut (Ward, 1982).
+                    Dari ketiga sumber tersebut, di Indonesia gempa merupakan penyebab utama (Puspito dan Triyoso,
+                    1994).
+                  </p>
+                  <a href="http://inatews2.bmkg.go.id/new/tentang_tsunami.php" class="btn btn-warning px-4 py-2 fs-5">
+                    <!-- Larger button text -->
+                    Baca Selengkapnya
+                  </a>
                 </div>
               </div>
             </div>
-            
-            <!-- Text Column -->
-            <div class="col-lg-6">
-              <div class="ps-lg-4"> <!-- Adjusted padding -->
-                <h2 class="fw-bold mb-4 display-5">APA ITU TSUNAMI?</h2> <!-- Larger heading -->
-                <p class="text-justify mb-4 fs-5"> <!-- Slightly larger text -->
-                  Tsunami adalah gelombang laut yang terjadi karena adanya gangguan impulsif pada laut. Gangguan impulsif tersebut terjadi akibat adanya perubahan 
-                  bentuk dasar laut secara tiba-tiba dalam arah vertikal (Pond and Pickard, 1983) atau dalam arah horizontal (Tanioka and Satake, 1995). 
-                  Perubahan tersebut disebabkan oleh tiga sumber utama, yaitu gempa tektonik, letusan gunung api, atau longsoran yang terjadi di dasar laut (Ward, 1982). 
-                  Dari ketiga sumber tersebut, di Indonesia gempa merupakan penyebab utama (Puspito dan Triyoso, 1994).
-                </p>
-                <a href="http://inatews2.bmkg.go.id/new/tentang_tsunami.php" 
-                   class="btn btn-warning px-4 py-2 fs-5"> <!-- Larger button text -->
-                  Baca Selengkapnya
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-header text-center pb-4"> <!-- Mengurangi padding-bottom dari pb-5 ke pb-3 -->
+            <h2 class="mb-4">Informasi Utama</h2> <!-- Menambahkan margin-bottom -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Single row wrapping both cards -->
+      <div class="row justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-12 col-md-8 col-lg-6 mb-4">
+          <div class="card text-center shadow" style="max-width: 600px;">
+            <div class="card-header bg-dark text-white">
+              <h4 class="card-title mb-0">Peta Risiko Tsunami Per Desa Wilayah DIY</h4>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                <img src="assets/peta bahaya tsunami.jpg" alt="Peta Skala Desa" class="img-fluid"
+                  style="max-height: 300px; width: auto;">
+              </div>
+              <div class="p-4">
+                <a href="#drive" class="btn btn-dark btn-sm py-1 px-3">
+                  Lihat Peta
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-md-8 col-lg-6 mb-4">
+          <div class="card text-center shadow" style="max-width: 600px;">
+            <div class="card-header bg-dark text-white">
+              <h4 class="card-title mb-0">Visualisasi 3D Gelombang Tsunami Pesisir DIY</h4>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-center">
+                <img src="assets/peta bahaya tsunami.jpg" alt="Peta Skala Desa" class="img-fluid"
+                  style="max-height: 300px; width: auto;">
+              </div>
+              <div class="p-4">
+                <a href="#drive" class="btn btn-dark btn-sm py-1 px-3">
+                  Lihat Peta
                 </a>
               </div>
             </div>
@@ -172,71 +233,15 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Services Section -->
-<section id="services" class="services section-padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-header text-center pb-5">
-          <h2>Informasi Utama</h2>
-        </div>
-      </div>  
-    </div>
-    
-    <div class="row justify-content-center">
-      <!-- Card 1 -->
-      <div class="col-12 col-md-8 col-lg-6 mb-4">
-        <div class="card text-center shadow" style="max-width: 600px;"> <!-- Batas maksimum lebar -->
-          <div class="card-header bg-dark text-white">
-            <h3 class="card-title mb-0">Peta Risiko Tsunami Per Desa Wilayah DIY</h3>
-          </div>
-          <div class="card-body">
-            <div class="d-flex justify-content-center"> <!-- Container untuk membatasi ukuran gambar -->
-              <img src="assets/peta bahaya tsunami.jpg" alt="Peta Skala Desa" class="img-fluid" style="max-height: 300px; width: auto;">
-            </div>
-            <div class="p-4">
-              <p class="lead">Peta wilayah rawan tsunami di Indonesia</p>
-              <a href="#drive" class="btn btn-dark mt-3">
-                <i class="bi bi-geo-alt-fill me-2"></i>Lihat Peta
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 2 -->
-      <div class="col-12 col-md-8 col-lg-6 mb-4">
-        <div class="card text-center shadow" style="max-width: 600px;">
-          <div class="card-header bg-dark text-white">
-            <h3 class="card-title mb-0">Sistem Peringatan</h3>
-          </div>
-          <div class="card-body">
-            <div class="d-flex justify-content-center">
-              <img src="assets/sistem-peringatan.jpg" alt="Sistem Peringatan Tsunami" class="img-fluid" style="max-height: 300px; width: auto;">
-            </div>
-            <div class="p-4">
-              <p class="lead">Sistem peringatan dini tsunami Indonesia</p>
-              <a href="link-ke-sistem" class="btn btn-dark mt-3">
-                <i class="bi bi-info-circle-fill me-2"></i>Pelajari Lebih Lanjut
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- team -->
+  <!-- Information -->
   <section id="team" class="team section-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="section-header text-center pb-5">
-            <h2>Manajemen Teams</h2>
+            <h2>INSTITUSI TERKAIT INFORMASI TSUNAMI</h2>
           </div>
         </div>
       </div>
@@ -247,7 +252,7 @@
               <img src="assets/zhifz.webp" alt="nzhifax" class="img-fluid rounded-circle">
               <h4 class="card-title py-2">Nazhifa</h4>
               <p class="card-text">Application Developer<br>
-              Nama : Nazhifa Khoirunnisa <br> NIM : 22/505986/SV/22025</p>
+                Nama : Nazhifa Khoirunnisa <br> NIM : 22/505986/SV/22025</p>
               <p class="socials">
                 <a href="https://instagram.com/nzhifax?igshid=MTk0NTkyODZkYg==" class="social"><i
                     class="fa-brands fa-instagram text-dark mx-1" style="color: black;"></i></a>
@@ -266,7 +271,7 @@
               <img src="assets/oci.webp" alt="oci" class="img-fluid rounded-circle">
               <h4 class="card-title py-2">Khosyi</h4>
               <p class="card-text">Application Designer<br>
-              Nama : Khosyi Nur Aliya <br> NIM : 22/503629/SV/21524</p>
+                Nama : Khosyi Nur Aliya <br> NIM : 22/503629/SV/21524</p>
               <p class="socials">
                 <a href="https://instagram.com/khosyina_?igshid=OGQ5ZDc2ODk2ZA==" class="social"><i
                     class="fa-brands fa-instagram text-dark mx-1" style="color: black;"></i></a>
@@ -285,7 +290,7 @@
               <img src="assets/aly.webp" alt="alya.sx" class="img-fluid rounded-circle">
               <h4 class="card-title py-2">Alya</h4>
               <p class="card-text">Website Developer <br>
-              Nama : Alya Syahidha <br> NIM : 22/505809/SV/21946</p>
+                Nama : Alya Syahidha <br> NIM : 22/505809/SV/21946</p>
               <p class="socials">
                 <a href="https://instagram.com/alya.sx?igshid=MTk0NTkyODZkYg==" class="social"><i
                     class="fa-brands fa-instagram text-dark mx-1" style="color: black;"></i></a>
@@ -308,8 +313,8 @@
               <p class="socials">
                 <a href="https://instagram.com/devinta_cahaya?igshid=MzMyNGUyNmU2YQ==" class="social"><i
                     class="fa-brands fa-instagram text-dark mx-1" style="color: black;"></i></a>
-                    <a href="https://github.com/devintaina9/" class="social"><i
-                        class="fa-brands fa-github text-dark mx-1"></i></a>
+                <a href="https://github.com/devintaina9/" class="social"><i
+                    class="fa-brands fa-github text-dark mx-1"></i></a>
                 <i class="bi bi-facebook text-dark mx-1"></i>
                 <i class="bi bi-twitter text-dark mx-1"></i>
                 <i class="bi bi-linkedin text-dark mx-1"></i>
@@ -324,7 +329,7 @@
   <!-- footer -->
   <footer class="bg-dark p-2 text-center">
     <div class="container">
-        <p class="text-light">Group 14 Proudly Present &copy; 2023 - WEBGIS</p>
+      <p class="text-light">Group 14 Proudly Present &copy; 2023 - WEBGIS</p>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
