@@ -1,39 +1,84 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informasi Tsunami - SIGAP TSUNAMI</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>SIGAP TSUNAMI DIY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       padding-top: 70px;
-      background-color: #f8f9fa;
+      /* Sesuaikan dengan tinggi navbar Anda */
+      background: #ffffff;
     }
-    .section-title {
-      font-weight: bold;
-      font-size: 2rem;
-      margin-bottom: 1rem;
+
+    .content {
+      margin-top: 70px;
+      /* Sesuaikan dengan tinggi navbar Anda */
+      padding-bottom: 20px;
+      /* Atur padding di bagian bawah jika diperlukan */
+    }
+
+    #map {
+      height: 97.5vh;
+    }
+
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: rgb(255, 255, 255);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 15px rgba(227, 219, 219, 0.2);
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .info h2 {
+      margin: 0 0 5px;
+      color: #fbfbfb;
+    }
+
+    .text-biru-muda {
       color: #054593;
     }
   </style>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">SIGAP TSUNAMI-ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI-ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ<span class="text-primary"></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Informasi</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-          <li class="nav-item"><a class="nav-link" href="peta_RS.html">Tentang</a></li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="informasi.html">Informasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#map">Peta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Kontak</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="peta_RS.html">Tentang</a>
+          </li>
+        </ul>
         </ul>
       </div>
     </div>
