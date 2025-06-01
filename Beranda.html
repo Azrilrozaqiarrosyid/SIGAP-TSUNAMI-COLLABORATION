@@ -12,16 +12,16 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
-
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-       <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI </span class="text-primary"> - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ</a>
-       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI </span class="text-primary"> -
+        ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -145,6 +145,93 @@
     </div>
   </section>
 
+
+<!-- Link CSS Swiper -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+<section id="team" class="team section-padding">
+  <div class="container">
+    <div class="section-header text-center pb-5">
+      <h2>APA SAJA PENYEBAB TSUNAMI</h2>
+    </div>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card text-center">
+            <div class="card-body">
+              <img src="assets/BMKG logo.png" alt="BMKG" class="img-fluid rounded-circle" />
+              <h4 class="card-title py-2">BMKG</h4>
+              <p>Deskripsi BMKG...</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card text-center">
+            <div class="card-body">
+              <img src="assets/LOGOBPBD.png" alt="BPBD" class="img-fluid rounded-circle" />
+              <h4 class="card-title py-2">BPBD</h4>
+              <p>Deskripsi BPBD...</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card text-center">
+            <div class="card-body">
+              <img src="assets/LOGOBASARNAS.png" alt="BASARNAS" class="img-fluid rounded-circle" />
+              <h4 class="card-title py-2">BASARNAS</h4>
+              <p>Deskripsi BASARNAS...</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card text-center">
+            <div class="card-body">
+              <img src="assets/PEMDA.png" alt="PEMDA" class="img-fluid rounded-circle" />
+              <h4 class="card-title py-2">PEMDA</h4>
+              <p>Deskripsi PEMDA...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Link JS Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+    },
+  });
+</script>
+
+
+
   <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
@@ -222,8 +309,9 @@
               </div>
 
               <h4 class="card-title py-2">BMKG</h4>
-              <p class="card-text" bol><b>Stasiun Geofisika Yogyakarta</b><br>
-                Melakukan pengamatan, pengumpulan, analisis, dan penyebaran data, serta pelayanan jasa Geofisika termasuk gempabumi dan tsunami</p>
+              <p class="card-text" bol><b>Stasiun Geofisika Sleman</b><br>
+                Melakukan pengamatan, pengumpulan, analisis, dan penyebaran data, serta pelayanan jasa Geofisika
+                termasuk gempabumi dan tsunami</p>
               <p class="socials">
                 <a href="https:wa.me/+62895368777957" class="social"><i
                     class="fa-brands fa-whatsapp text-dark mx-1"></i></a>
@@ -233,7 +321,7 @@
                     class="fa-brands fa-square-x-twitter text-dark mx-1"></i></a>
                 <a href="https://t.me/s/InaTEWS_BMKG" class="social"><i
                     class="fa-brands fa-telegram text-dark mx-1"></i></a>
-                <a href="https://yogyakarta.bmkg.go.id/" class="social"><i
+                <a href="https://www.bmkg.go.id/profil" class="social"><i
                     class="fa-solid fa-globe text-dark mx-1"></i></a>
                 <a href="https://maps.app.goo.gl/2jT69z2LxSpX1vtv5" class="social"><i
                     class="fa-solid fa-location-dot text-dark mx-1"></i></a>
@@ -253,7 +341,7 @@
 
               <h4 class="card-title py-2">BPBD</h4>
               <p class="card-text" bol><b>BPBD Yogyakarta</b><br>
-                Membantu penanggulangan bencana meliputi pencegahan, mitigasi, 
+                Membantu penanggulangan bencana meliputi pencegahan, mitigasi,
                 kesiapsiagaan, tanggap darurat, rehabilitasi, dan rekonstruksi </p>
               <p class="socials">
                 <a href="https:wa.me/+62274555584" class="social"><i
@@ -278,14 +366,14 @@
             <div class="card-body">
               <!-- Perubahan pada bagian gambar -->
               <div class="mx-auto mb-3" style="width: 150px; height: 150px; overflow: hidden;">
-                <img src="assets/LOGOBASARNAS.png" alt="BASARNAS Yogyakarta" class="img-fluid rounded-circle h-100 w-100"
-                  style="object-fit: cover;">
+                <img src="assets/LOGOBASARNAS.png" alt="BASARNAS Yogyakarta"
+                  class="img-fluid rounded-circle h-100 w-100" style="object-fit: cover;">
               </div>
 
               <h4 class="card-title py-2">BASARNAS</h4>
               <p class="card-text" bol><b>BASARNAS Yogyakarta</b><br>
-              Membantu pemerintah dalam proses pencarian dan pertolongan sesuai dengan peraturan perundang-undangan
-              dengan fokus pada evakuasi korban bencana</p>
+                Membantu pemerintah dalam proses pencarian dan pertolongan sesuai dengan peraturan perundang-undangan
+                dengan fokus pada evakuasi korban bencana</p>
               <p class="socials">
                 <a href="https:wa.me/+6281229978883" class="social"><i
                     class="fa-brands fa-whatsapp text-dark mx-1"></i></a>
@@ -314,7 +402,8 @@
 
               <h4 class="card-title py-2">PEMDA</h4>
               <p class="card-text" bol><b>Pemerintah Daerah DIY</b><br>
-                Menyusun dan mengimplementasikan kebijakan penanggulangan bencana secara komprehensif dari proses mitigasi hingga evakuasi</p>
+                Menyusun dan mengimplementasikan kebijakan penanggulangan bencana secara komprehensif dari proses
+                mitigasi hingga evakuasi</p>
               <p class="socials">
                 <a href="https:wa.me/+62274562811" class="social"><i
                     class="fa-brands fa-whatsapp text-dark mx-1"></i></a>
@@ -336,43 +425,56 @@
     </div>
   </section>
 
-<!-- footer -->
-<footer class="bg-dark text-light pt-4 pb-2 mt-5">
-  <div class="container text-center text-md-start">
-    <div class="row">
-      <!-- Kolom 1: Judul & Deskripsi -->
-      <div class="col-md-4 mb-3">
-        <h5 class="text-uppercase fw-bold">SIGAP TSUNAMI</h5>
-        <p>Sistem Informasi Geospasial Ancaman Potensial Tsunami untuk wilayah DIY. Siaga, cepat, dan terpercaya.</p>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-start">
+
+        <!-- Kolom 1: Logo & Deskripsi -->
+        <div class="col-md-4 mb-4">
+          <h4 class="fw-bold text-info">SIGAP TSUNAMI</h4>
+          <p class="small">
+            Sistem Informasi Geospasial Ancaman Potensial Tsunami wilayah DIY. Didesain untuk membantu masyarakat agar
+            selalu siaga dan cepat tanggap dalam menghadapi potensi tsunami.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Kontak -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-semibold text-info mb-3">Kontak Kami</h5>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><i class="bi bi-envelope me-2 text-warning"></i> sigap@tsunami-diy.id</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2 text-warning"></i> +62 812 3456 7890</li>
+            <li><i class="bi bi-geo-alt me-2 text-warning"></i> Yogyakarta, Indonesia</li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Media Sosial -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-semibold text-info mb-3">Ikuti Kami</h5>
+          <div>
+            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-light fs-5"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Kolom 2: Kontak -->
-      <div class="col-md-4 mb-3">
-        <h6 class="text-uppercase">Kontak</h6>
-        <ul class="list-unstyled">
-          <li><i class="bi bi-envelope"></i> sigap@tsunami-diy.id</li>
-          <li><i class="bi bi-telephone"></i> +62 812 3456 7890</li>
-          <li><i class="bi bi-geo-alt"></i> Yogyakarta, Indonesia</li>
-        </ul>
-      </div>
+      <hr class="border-secondary my-4">
 
-      <!-- Kolom 3: Sosial Media -->
-      <div class="col-md-4 mb-3">
-        <h6 class="text-uppercase">Ikuti Kami</h6>
-        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-light"><i class="fab fa-youtube"></i></a>
+      <!-- Copyright -->
+      <div class="text-center small">
+        <p class="mb-0">&copy; 2025 SIGAP TSUNAMI | Dikembangkan oleh Mahasiswa GIS Universitas Gadjah Mada</p>
       </div>
     </div>
+  </footer>
 
-    <hr class="bg-secondary">
-    <div class="text-center">
-      <p class="mb-0">SIGAP TSUNAMI &copy; 2025 | Dikembangkan oleh Mahasiswa GIS UGM</p>
-    </div>
-  </div>
-</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+</body>
 </html>
