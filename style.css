@@ -118,4 +118,22 @@
   .team .card-body .img-fluid .rounded-circle{
     width: 100%;
   }
+  .navbar-brand {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Ukuran teks fleksibel */
+  white-space: normal; /* Izinkan teks turun ke baris berikutnya */
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+.navbar {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 }
