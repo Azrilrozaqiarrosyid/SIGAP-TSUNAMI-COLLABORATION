@@ -1,169 +1,202 @@
-*{
-    font-family: montserrat;
-  }
-  body {
-    background: #C5DFDF;
-  }
-  .section-padding{
-    padding: 100px 0;
-  }
-  .carousel-item{
-    height: 100hv;
-    min-height: 300px;
-  }
-  .carousel-caption{
-    bottom: 220px;
-    z-index: 2;
-  }
-  .carousel-caption h5{
-    font-size: 45px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 25px;
-  }
-  .carousel-caption p{
-   width: 60%;
-   margin: auto;
-   font-size: 18px;
-   line-height: 1.9; 
-  }
-  .carousel-inner::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 1;
-  }
-  .navbar-nav a{
-    font-size: 15px;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-  .navbar-light .navbar-brand{
-    color: black;
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-  .navbar-light .navbar-brand:focus,
-  .navbar-light .navbar-brand:hover{
-    color: #000;
-  }
-  .navbar-light .navbar-nav .navbar-link{
-    color: #000;
-  }
-  .w-100{
-    height: 100vh;
-  }
-  .services .card-body i{
-    font-size: 50px;
-  }
-  .team .card-body i{
-    font-size: 20px;
-  }
-  .team .card{
-    box-shadow: 15px 15px 40px rgba(0,0,0,0.09);
-  }
-  .text-biru-muda {
-    color: #4e89ae; /* kode warna biru muda */
-  }
-  
-
-  /* responsive css */  
-  @media only screen and (min-width: 768px) and (max-width:991px) {
-    .carousel-caption{
-      bottom: 370px;
-    }
-    .carousel-caption p{
-      width: 100%;
-    }
-    .card{
-      margin-bottom: 30px;
-    }
-    .img-area img{
-      width: 100%;
-    }
-    .team .card-body .img-fluid .rounded-circle{
-      width: 100%;
-    }
-  }
-  @media only screen and (max-width: 767px){
-    .navbar-nav{
-      text-align: center;
-    }
-    .carousel-caption{
-      bottom: 125px;
-    }
-    .carousel-caption h5{
-      font-size: 17px;
-    }
-    .carousel-caption a{
-      padding: 10px 15px;
-  }
-  .carousel-caption p{
-    width: 100%;
-    line-height: 1.6;
-    font-size: 12px;
-  }
-  .about-text{
-    padding-top: 50px;
-  }
-  .card{
-    margin-bottom: 30px;
-  }
-  .team .card-body .img-fluid .rounded-circle{
-    width: 100%;
-  }
-  .navbar-brand {
-  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Ukuran teks fleksibel */
-  white-space: normal; /* Izinkan teks turun ke baris berikutnya */
-  line-height: 1.2;
-  font-weight: 600;
+/* Set semua elemen menggunakan font Montserrat, fallback ke sans-serif */
+* {
+  font-family: 'Montserrat';
 }
 
-@media (max-width: 576px) {
-  .navbar-brand {
-    font-size: 1rem;
-    text-align: center;
-  }
+/* Body halaman dengan warna latar biru muda dan beri padding atas supaya konten tidak tertutup navbar */
+body {
+  background: #C5DFDF;
+  padding-top: 80px; /* Sesuaikan dengan tinggi navbar */
 }
+
+/* Padding atas dan bawah 100px untuk section yang menggunakan kelas ini */
+.section-padding {
+  padding: 100px 0;
+}
+
+/* Navbar styling utama */
 .navbar {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-top: 1.25rem;       /* Padding atas */
+  padding-bottom: 1.25rem;    /* Padding bawah */
+  min-height: 80px;           /* Tinggi minimum navbar */
+  display: flex;              /* Gunakan flexbox */
+  align-items: center;        /* Rata tengah vertikal isi navbar */
 }
 
-        body {
-            padding-top: 70px;
-            /* Sesuaikan dengan tinggi navbar Anda */
-        }
+/* Styling tautan dalam navbar */
+.navbar-nav a {
+  font-size: 15px;            /* Ukuran font 15px */
+  text-transform: uppercase;  /* Huruf kapital semua */
+  font-weight: 500;           /* Ketebalan font sedang */
+}
 
-        .content {
-            margin-top: 70px;
-            /* Sesuaikan dengan tinggi navbar Anda */
-            padding-bottom: 20px;
-            /* Atur padding di bagian bawah jika diperlukan */
-        }
+/* Styling brand navbar */
+.navbar-light .navbar-brand {
+  color: black;               /* Warna hitam */
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Ukuran font responsif */
+  text-transform: uppercase;  /* Huruf kapital semua */
+  font-weight: 700;           /* Tebal font sangat */
+  letter-spacing: 2px;        /* Jarak antar huruf */
+  line-height: 1.2;           /* Jarak antar baris */
+  white-space: normal;        /* Izinkan teks turun baris */
+}
 
+/* Warna brand navbar saat hover/fokus */
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+  color: #000;                /* Warna hitam tetap */
+}
 
+/* Warna link navbar (meskipun kelas .navbar-link tidak ada di html) */
+.navbar-light .navbar-nav .navbar-link {
+  color: #000;
+}
 
-        .info {
-            padding: 6px 8px;
-            font: 14px/16px Arial, Helvetica, sans-serif;
-            background: white;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            text-align: center;
-        }
+/* Gaya carousel item agar tinggi layar penuh, minimal 300px */
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+}
 
-        .info h4 {
-            margin: 0 0 5px;
-            color: #777;
-        }
-   
+/* Posisi caption carousel */
+.carousel-caption {
+  bottom: 220px; /* Jarak 220px dari bawah */
+  z-index: 2;    /* Agar berada di atas layer lain */
+}
 
+/* Styling judul di caption carousel */
+.carousel-caption h5 {
+  font-size: 45px;            /* Besar font */
+  text-transform: uppercase;  /* Huruf kapital */
+  letter-spacing: 2px;        /* Jarak antar huruf */
+  margin-top: 25px;           /* Jarak atas */
+}
+
+/* Styling paragraf caption */
+.carousel-caption p {
+  width: 60%;                 /* Lebar 60% container */
+  margin: auto;               /* Rata tengah horizontal */
+  font-size: 18px;            /* Ukuran font */
+  line-height: 1.9;           /* Jarak antar baris */
+}
+
+/* Layer hitam transparan di atas carousel untuk kontras teks */
+.carousel-inner::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7); /* Hitam transparan 70% */
+  z-index: 1;               /* Di bawah caption */
+}
+
+/* Kelas utilitas w-100 dengan tinggi layar penuh */
+.w-100 {
+  height: 100vh;
+}
+
+/* Styling container konten dengan margin dan padding */
+.content {
+  margin-top: 1.25rem;       /* Jarak atas supaya tidak tertutup navbar */
+  padding-bottom: 20px;      /* Padding bawah */
+}
+
+/* Ukuran ikon di bagian services */
+.services .card-body i {
+  font-size: 50px;
+}
+
+/* Ukuran ikon di bagian team */
+.team .card-body i {
+  font-size: 20px;
+}
+
+/* Bayangan lembut untuk card team */
+.team .card {
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.09);
+}
+
+/* Warna teks biru muda untuk kelas khusus */
+.text-biru-muda {
+  color: #4e89ae;
+}
+
+/* Styling box info */
+.info {
+  padding: 6px 8px;                    /* Padding dalam */
+  font: 14px/16px Arial, Helvetica, sans-serif; /* Font dan line height */
+  background: rgba(255, 255, 255, 0.8);  /* Background putih transparan */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Bayangan */
+  border-radius: 5px;                  /* Sudut membulat */
+  text-align: center;                  /* Teks rata tengah */
+}
+
+/* Styling judul di dalam info */
+.info h4 {
+  margin: 0 0 5px;                    /* Margin bawah 5px */
+  color: #777;                       /* Warna abu */
+}
+
+/* ---------------- Responsive CSS ---------------- */
+
+/* Untuk layar tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-caption {
+    bottom: 370px;                   /* Caption lebih naik */
+  }
+
+  .carousel-caption p {
+    width: 100%;                    /* Paragraf penuh lebar */
+  }
+
+  .card {
+    margin-bottom: 30px;             /* Jarak bawah antar card */
+  }
+
+  .img-area img {
+    width: 100%;                    /* Gambar full lebar */
+  }
+
+  .team .card-body .img-fluid .rounded-circle {
+    width: 100%;                    /* Avatar full lebar */
+  }
+}
+
+/* Untuk layar smartphone (max 767px) */
+@media (max-width: 767px) {
+  .navbar-nav {
+    text-align: center;             /* Navbar menu rata tengah */
+  }
+
+  .carousel-caption {
+    bottom: 125px;                  /* Caption lebih turun */
+  }
+
+  .carousel-caption h5 {
+    font-size: 17px;                /* Judul caption kecil */
+  }
+
+  .carousel-caption a {
+    padding: 10px 15px;             /* Padding tombol */
+  }
+
+  .carousel-caption p {
+    width: 100%;                   /* Paragraf lebar penuh */
+    line-height: 1.6;              /* Jarak baris rapat */
+    font-size: 12px;               /* Ukuran font kecil */
+  }
+
+  .about-text {
+    padding-top: 50px;             /* Padding atas tambahan */
+  }
+
+  .card {
+    margin-bottom: 30px;           /* Jarak bawah antar card */
+  }
+
+  .team .card-body .img-fluid .rounded-circle {
+    width: 100%;                  /* Avatar full lebar */
+  }
 }
