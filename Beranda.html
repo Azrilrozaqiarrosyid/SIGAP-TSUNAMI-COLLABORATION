@@ -13,6 +13,9 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -145,91 +148,46 @@
     </div>
   </section>
 
-
-<!-- Link CSS Swiper -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
-
-<section id="team" class="team section-padding">
-  <div class="container">
-    <div class="section-header text-center pb-5">
-      <h2>APA SAJA PENYEBAB TSUNAMI</h2>
-    </div>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="card text-center">
-            <div class="card-body">
-              <img src="assets/BMKG logo.png" alt="BMKG" class="img-fluid rounded-circle" />
-              <h4 class="card-title py-2">BMKG</h4>
-              <p>Deskripsi BMKG...</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card text-center">
-            <div class="card-body">
-              <img src="assets/LOGOBPBD.png" alt="BPBD" class="img-fluid rounded-circle" />
-              <h4 class="card-title py-2">BPBD</h4>
-              <p>Deskripsi BPBD...</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card text-center">
-            <div class="card-body">
-              <img src="assets/LOGOBASARNAS.png" alt="BASARNAS" class="img-fluid rounded-circle" />
-              <h4 class="card-title py-2">BASARNAS</h4>
-              <p>Deskripsi BASARNAS...</p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="card text-center">
-            <div class="card-body">
-              <img src="assets/PEMDA.png" alt="PEMDA" class="img-fluid rounded-circle" />
-              <h4 class="card-title py-2">PEMDA</h4>
-              <p>Deskripsi PEMDA...</p>
-            </div>
-          </div>
+  <section class="data-section">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-header text-center pb-4"> <!-- Mengurangi padding-bottom dari pb-5 ke pb-3 -->
+          <h2 class="mb-4">Penyebab Tsunami</h2> <!-- Menambahkan margin-bottom -->
         </div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
     </div>
-  </div>
-</section>
+    
+    <div class="card-container">
+      <!-- Kartu 1 -->
+      <div class="data-card">
+        <h4><b>Gempa Tektonik Bawah Laut</b></h4>
+        <img src="assets/gempa.jpg" alt="Gempa" class="preview-img">
+        <p>Gempa bumi ini biasanya terjadi di dasar laut dengan
+          kedalaman pusat gempa kurang dari 60 km. ini merupakan penyebab paling umum untuk bencana tsunami.</p>
+      </div>
 
-<!-- Link JS Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+      <!-- Kartu 2 -->
+      <div class="data-card">
+        <h3>Data Batnas</h3>
+        <img src="assets/batnas.png" alt="Data Batnas" class="preview-img">
+        <p>Unduh Batnas 110E-115E_10S-05S_MSL_V1.1.tif</p>
+      </div>
 
-<script>
-  const swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
-    spaceBetween: 0,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-    },
-  });
-</script>
+      <!-- Kartu 3 -->
+      <div class="data-card">
+        <h3>Data Demnas</h3>
+        <img src="assets/demnas.png" alt="Data Demnas" class="preview-img">
+        <p>Unduh DEMNAS_1508-13_v1.0.tif</p>
+      </div>
 
+      <!-- Kartu 4 -->
+      <div class="data-card">
+        <h3>Data RBI per Wilayah</h3>
+        <img src="assets/rbi.png" alt="Data RBI" class="preview-img">
+        <p>Unduh 25K/50K Demak.zip</p>
+      </div>
+    </div padding-bottom = 20px>
+  </section>
 
 
   <!-- Services Section -->
@@ -476,5 +434,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
 </body>
+
 </html>
