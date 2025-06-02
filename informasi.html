@@ -2,27 +2,104 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SIGAP TSUNAMI DIY</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
-  
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #C5DFDF;
+      color: #333;
+      scroll-padding-top: 70px; /* untuk smooth scroll dan fixed navbar */
+    }
+    .section-title {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #0d4073;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: #007bff;
+      border-radius: 2px;
+    }
+    main.container {
+      max-width: 900px;
+      margin-top: 90px;
+      margin-bottom: 60px;
+      background: #fff;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    ul {
+      font-size: 1.1rem;
+      padding-left: 1.3rem;
+      margin-bottom: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+    footer {
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+    }
+    /* Video embed rounded and shadow */
+    .ratio iframe {
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .ratio iframe:hover {
+      transform: scale(1.03);
+    }
+  </style>
 </head>
 
 <body>
-
-<!-- navbar -->
+  <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-       <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI </span class="text-primary"> - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ</a>
-       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI </span class="text-primary"> -
+        ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,51 +120,46 @@
             <a class="nav-link" href="peta_RS.html">Tentang</a>
           </li>
         </ul>
-        </ul>
       </div>
     </div>
   </nav>
 
   <!-- Konten -->
-  <main class="container py-5">
-
+  <main class="container py-4">
     <!-- Pemodelan Tsunami -->
     <section class="mb-5">
       <h2 class="section-title">Bagaimana Tsunami Dimodelkan?</h2>
       <p>
-        Pemodelan tsunami menggunakan perangkat lunak seperti <strong>COMCOT (Cornell Multi-grid Coupled Tsunami Model)</strong> 
-        dilakukan untuk mensimulasikan bagaimana gelombang tsunami menyebar setelah gempa terjadi. Model ini bekerja dengan 
-        menggunakan data gempa (magnitudo, lokasi, kedalaman) untuk memprediksi arah, kecepatan, dan tinggi gelombang yang akan mencapai pantai.
+        Pemodelan tsunami menggunakan perangkat lunak seperti
+        <strong>COMCOT (Cornell Multi-grid Coupled Tsunami Model)</strong> dilakukan untuk mensimulasikan bagaimana gelombang tsunami
+        menyebar setelah gempa terjadi. Model ini bekerja dengan menggunakan data gempa (magnitudo, lokasi, kedalaman) untuk
+        memprediksi arah, kecepatan, dan tinggi gelombang yang akan mencapai pantai.
       </p>
       <p>
-        Contohnya, dalam simulasi tsunami di wilayah DIY, COMCOT dapat memetakan daerah yang berpotensi terdampak dan waktu kedatangan gelombang tsunami.
-        Ini sangat penting dalam sistem peringatan dini dan perencanaan evakuasi masyarakat.
+        Contohnya, dalam simulasi tsunami di wilayah DIY, COMCOT dapat memetakan daerah yang berpotensi terdampak dan waktu
+        kedatangan gelombang tsunami. Ini sangat penting dalam sistem peringatan dini dan perencanaan evakuasi masyarakat.
       </p>
     </section>
 
     <!-- Titik Evakuasi -->
     <section class="mb-5">
       <h2 class="section-title">Di Mana Kita Harus Mengungsi Saat Tsunami?</h2>
-      <p>
-        Mengetahui titik evakuasi di sekitar wilayah pesisir sangat penting. Beberapa titik evakuasi tsunami yang telah disiapkan di wilayah DIY antara lain:
-      </p>
+      <p>Mengetahui titik evakuasi di sekitar wilayah pesisir sangat penting. Beberapa titik evakuasi tsunami yang telah disiapkan di wilayah DIY antara lain:</p>
       <ul>
         <li>Titik Evakuasi Parangtritis</li>
         <li>Jalur Evakuasi Pantai Depok</li>
         <li>Gedung Bertingkat di sekitar Pantai Glagah</li>
         <li>Tempat Evakuasi Sementara (TES) buatan BPBD</li>
       </ul>
-      <p>
-        Jika merasakan gempa kuat lebih dari 20 detik, segera evakuasi ke tempat tinggi tanpa menunggu sirine.
-      </p>
+      <p>Jika merasakan gempa kuat lebih dari 20 detik, segera evakuasi ke tempat tinggi tanpa menunggu sirine.</p>
     </section>
 
     <!-- Video Simulasi -->
     <section class="mb-5">
       <h2 class="section-title">Visualisasi: Beginilah Tsunami Menyapu Daratan</h2>
       <p>
-        Simulasi video 3D berikut memberikan gambaran realistis tentang bagaimana gelombang tsunami menyapu kawasan pesisir. Visualisasi ini sangat berguna 
-        untuk meningkatkan kesadaran masyarakat terhadap bahaya nyata tsunami.
+        Simulasi video 3D berikut memberikan gambaran realistis tentang bagaimana gelombang tsunami menyapu kawasan pesisir.
+        Visualisasi ini sangat berguna untuk meningkatkan kesadaran masyarakat terhadap bahaya nyata tsunami.
       </p>
       <div class="ratio ratio-16x9 mb-3">
         <iframe src="https://www.youtube.com/embed/B1RLg4y4B-s" title="Simulasi Tsunami" allowfullscreen></iframe>
@@ -111,11 +183,11 @@
     <section>
       <h2 class="section-title">Bersiap Itu Kunci Selamat</h2>
       <p>
-        Meningkatkan kesadaran akan tsunami bukan hanya tugas pemerintah, tapi juga tanggung jawab kita bersama. 
-        Bagikan informasi ini kepada keluarga dan tetangga Anda. <strong>Lebih baik panik duluan daripada terlambat bertindak.</strong>
+        Meningkatkan kesadaran akan tsunami bukan hanya tugas pemerintah, tapi juga tanggung jawab kita bersama.
+        Bagikan informasi ini kepada keluarga dan tetangga Anda.
+        <strong>Lebih baik panik duluan daripada terlambat bertindak.</strong>
       </p>
     </section>
-
   </main>
 
   <!-- Footer -->
