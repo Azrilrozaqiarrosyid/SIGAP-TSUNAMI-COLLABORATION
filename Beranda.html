@@ -1,25 +1,31 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIGAP TSUNAMI DIY</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Bootstrap & Icon -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Swiper CSS -->
+
+  <!-- AOS & Animate -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- Swiper -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-<!-- Bootstrap & Animate.css -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
 <style>
   .carousel-item img {
     object-fit: cover;
@@ -129,11 +135,147 @@
     transform: scale(1.05);
     transition: 0.3s ease;
   }
+
+  .data-section {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.data-card {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.data-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  border-color: #0d6efd;
+  z-index: 10;
+}
+
+/* Glowing background effect */
+.data-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(13,110,253,0.2), transparent);
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  z-index: -1;
+}
+
+.data-card:hover::before {
+  transform: scale(1);
+}
+
+/* Icon/gambar animasi saat hover */
+.preview-img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  transition: transform 0.5s ease;
+}
+
+.data-card:hover .preview-img {
+  transform: translateY(-10px) scale(1.1) rotate(-2deg);
+}
+
+/* Text efek */
+.data-card h4 {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.data-card:hover h4 {
+  color: #0d6efd;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card .btn {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card .btn:hover {
+    transform: scale(1.1);
+  }
+
+  .card-custom {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  min-height: 430px;
+}
+
+
+.card-custom:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-custom img {
+  border: 4px solid #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.card-custom:hover img {
+  transform: scale(1.05);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.socials a {
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.socials a:hover {
+  color: #000000;
+}
+
+footer a:hover {
+  color: #007BFF !important;
+  transition: 0.3s;
+}
+
+
 </style>
 
 <body>
   <!-- navbar -->
- <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate__animated animate__fadeInDown">
+ <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate_animated animate_fadeInDown">
   <div class="container">
     <a class="navbar-brand" href="#">
       <span>SIGAP TSUNAMI</span> - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ
@@ -142,7 +284,7 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse animate__animated animate__fadeInRight" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse animate_animated animate_fadeInRight" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="Beranda.html">Beranda</a>
@@ -214,355 +356,267 @@
     </button>
   </div>
 
-  <!-- about -->
-  <section id="about" class="about-section py-5"> <!-- Added vertical padding -->
-    <div class="container-fluid px-lg-5"> <!-- Full-width container with horizontal padding -->
-      <div class="row justify-content-center mx-lg-5"> <!-- Added horizontal margins on large screens -->
-        <div class="col-12"> <!-- Full width column -->
-          <div class="card shadow-sm p-4 p-lg-5"> <!-- Increased padding on large screens -->
-            <div class="row align-items-center g-4 g-lg-5"> <!-- Increased gutter on large screens -->
+  <!-- Section About -->
+<section id="about" class="about-section py-5 bg-light position-relative overflow-hidden">
+  <div class="container">
+    <div class="row justify-content-between align-items-center g-5">
+      
+      <!-- YT Animation -->
+<div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+  <div class="ratio ratio-16x9 rounded shadow">
+  <iframe 
+    src="https://www.youtube.com/embed/6qWWysS53E4?autoplay=1&mute=1&playsinline=1"
+    title="Edukasi Tsunami - YouTube"
+    allow="autoplay; encrypted-media; clipboard-write; gyroscope; picture-in-picture"
+    allowfullscreen
+    referrerpolicy="strict-origin-when-cross-origin">
+  </iframe>
+</div>
+</div>
 
-              <!-- Image Column -->
-              <div class="col-lg-6"> <!-- Changed to col-lg for better control -->
-                <div class="d-flex flex-column gap-4 gap-lg-5"> <!-- Responsive gap -->
-                  <div class="text-center">
-                    <img src="assets/H1.gif" alt="Tsunami illustration" class="img-fluid rounded">
-                  </div>
-                  <div class="text-center">
-                    <img src="assets/inaTEWS.png" alt="INATEWS system" class="img-fluid rounded">
-                  </div>
-                </div>
-              </div>
+      <!-- Text Content -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+        <h3 class="fw-bold mb-3 text-gradient display-6">APA ITU <span class="text-primary">TSUNAMI?</span></h3>
+        <p class="mb-4 text-muted">
+          Tsunami adalah gelombang laut yang terjadi karena adanya gangguan impulsif pada laut. 
+          Gangguan impulsif tersebut terjadi akibat adanya perubahan bentuk dasar laut secara tiba-tiba dalam arah vertikal (Pond and Pickard, 1983) 
+          atau dalam arah horizontal (Tanioka and Satake, 1995). Perubahan tersebut disebabkan oleh tiga sumber utama, yaitu gempa tektonik, letusan gunung api, 
+          atau longsoran yang terjadi di dasar laut (Ward, 1982). Dari ketiga sumber tersebut, di Indonesia gempa merupakan penyebab utama (Puspito dan Triyoso,1994).
+        </p>
+       <a href="http://inatews2.bmkg.go.id/new/tentang_tsunami.php" 
+   class="btn btn-outline-primary px-4 py-2 fs-5 rounded-pill shadow-sm" 
+   style="transition: all 0.3s ease;">
+  Baca Selengkapnya
+</a>
+      </div> <!-- End Text Column -->
+    </div> <!-- End Row -->
+  </div>
+</section>
 
-              <!-- Text Column -->
-              <div class="col-lg-6">
-                <div class="ps-lg-4"> <!-- Adjusted padding -->
-                  <h2 class="fw-bold mb-4 display-5">APA ITU TSUNAMI?</h2> <!-- Larger heading -->
-                  <p class="text-justify mb-4 fs-5"> <!-- Slightly larger text -->
-                    Tsunami merupakan gelombang laut yang terjadi karena adanya gangguan impulsif pada laut. Gangguan
-                    impulsif tersebut terjadi akibat adanya perubahan
-                    bentuk dasar laut secara tiba-tiba dalam arah vertikal (Pond and Pickard, 1983) atau dalam arah
-                    horizontal (Tanioka and Satake, 1995).
-                    Perubahan tersebut disebabkan oleh tiga sumber utama, yaitu gempa tektonik, letusan gunung api, atau
-                    longsoran yang terjadi di dasar laut (Ward, 1982).
-                    Dari ketiga sumber tersebut, di Indonesia gempa merupakan penyebab utama (Puspito dan Triyoso,
-                    1994).
-                  </p>
-                  <a href="http://inatews2.bmkg.go.id/new/tentang_tsunami.php" class="btn btn-warning px-4 py-2 fs-5">
-                    <!-- Larger button text -->
-                    Baca Selengkapnya
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<section id="penyebab" class="py-5">
+  <div class="container">
+    <h3 class="fw-bold mb-5 text-center text-gradient display-6">
+      PENYEBAB <span class="text-primary">TSUNAMI</span>
+    </h3>
+
+
+    <div class="row align-items-center mb-5">
+      <!-- Gambar kiri -->
+      <div class="col-md-5" data-aos="fade-right">
+        <img src="assets/gempa.png" class="img-fluid rounded-4 shadow-sm" alt="Ilustrasi Gempa Bumi">
       </div>
-    </div>
-  </section>
-
-  <section class="data-section" style="background-color: #C5DFDF;">
-  <!-- Card besar sebagai background -->
-  <div class="card p-4 shadow rounded " style="max-width: 1200px; margin: auto;">
-    <!-- Judul -->
-    <div class="row">
-      <div class="col-12">
-        <div class="section-header text-center pb-4">
-          <h2 class="fw-bold mb-4 display-5">Penyebab Tsunami</h2>
-        </div>
-      </div>
-    </div>
-    
-    <div class="card-container">
-      <!-- Kartu 1 -->
-      <div class="data-card">
-        <h4><b>Gempa Tektonik Bawah Laut</b></h4>
-        <img src="assets/gempa.png" alt="gempa" class="preview-img">
-        <p>Gempa bumi bawah laut merupakan penyebab utama terjadinya tsunami, 
+      <!-- Teks kanan -->
+      <div class="col-md-6 ps-md-5 mt-4 mt-md-0" data-aos="fade-left">
+        <h3 class="fw-bold mb-3">Gempa Bumi Bawah Laut</h3>
+        <p class="text-muted">Gempa bumi bawah laut merupakan penyebab utama terjadinya tsunami,
           terutama jika gempa tersebut dangkal, berkekuatan besar (magnitudo ≥ 6,5), 
           dan berpusat di laut. Gempa ini menyebabkan pergeseran dasar laut secara vertikal yang 
           mengakibatkan perpindahan massa air laut secara tiba-tiba, sehingga menimbulkan gelombang tsunami. 
           Contoh nyata dari peristiwa ini adalah tsunami Aceh tahun 2004.</p>
       </div>
+    </div>
 
-      <!-- Kartu 2 -->
-      <div class="data-card">
-        <h3><b>Letusan Gunung Api Bawah Laut</b></h3>
-        <img src="assets/gunungapi.png" alt="gunungapi" class="preview-img">
-        <p>Letusan gunung api bawah laut dapat menimbulkan tsunami apabila letusan 
+    <div class="row align-items-center flex-md-row-reverse mb-5">
+      <!-- Gambar kanan -->
+      <div class="col-md-5" data-aos="fade-left">
+        <img src="assets/gunungapi.png" class="img-fluid rounded-4 shadow-sm" alt="Ilustrasi Letusan Gunung Api Bawah Laut">
+      </div>
+      <!-- Teks kiri -->
+      <div class="col-md-6 pe-md-5 mt-4 mt-md-0" data-aos="fade-right">
+        <h3 class="fw-bold mb-3">Letusan Gunung Api Bawah Laut</h3>
+        <p class="text-muted">Letusan gunung api bawah laut dapat menimbulkan tsunami apabila letusan 
           tersebut cukup kuat untuk mengganggu keseimbangan air laut secara mendadak. 
           Material vulkanik dan tekanan dari letusan dapat menyebabkan gelombang besar yang 
           menyebar ke segala arah. Salah satu contohnya adalah letusan Gunung Anak Krakatau pada 
           tahun 2018 yang memicu tsunami di kawasan Selat Sunda.</p>
       </div>
+    </div>
 
-      <!-- Kartu 3 -->
-      <div class="data-card">
-        <h3><b>Longsor Bawah Laut atau Longsor di Pantai</b></h3>
-        <img src="assets/longsor.png" alt="longsor" class="preview-img">
-        <p>Tsunami juga bisa terjadi akibat longsor bawah laut atau longsoran besar di tebing pantai yang jatuh ke laut. 
+    <div class="row align-items-center mb-5">
+      <!-- Gambar kiri -->
+      <div class="col-md-5" data-aos="fade-right">
+        <img src="assets/longsor.png" class="img-fluid rounded-4 shadow-sm" alt="Ilustrasi Longsor Bawah Laut">
+      </div>
+      <!-- Teks kanan -->
+      <div class="col-md-6 ps-md-5 mt-4 mt-md-0" data-aos="fade-left">
+        <h3 class="fw-bold mb-3">Longsor Bawah Laut</h3>
+        <p class="text-muted">Tsunami juga bisa terjadi akibat longsor bawah laut atau longsoran besar di tebing pantai yang jatuh ke laut. 
           Peristiwa ini menyebabkan gangguan mendadak pada permukaan laut karena volume air yang terdorong secara cepat. 
           Longsor seperti ini sering kali terjadi setelah gempa bumi atau aktivitas vulkanik, 
           seperti yang terjadi pada tsunami Palu tahun 2018.</p>
       </div>
+    </div>
 
-      <!-- Kartu 4 -->
-      <div class="data-card">
-        <h3><b>Benturan Benda Langit (Meteor)</b></h3>
-        <img src="assets/meteor.png" alt="meteor" class="preview-img">
-        <p>Meskipun jarang terjadi, benturan benda langit seperti meteor atau asteroid yang jatuh ke 
+    <div class="row align-items-center flex-md-row-reverse mb-5">
+      <!-- Gambar kanan -->
+      <div class="col-md-5" data-aos="fade-left">
+        <img src="assets/meteor.png" class="img-fluid rounded-4 shadow-sm" alt="Ilustrasi Meteor">
+      </div>
+      <!-- Teks kiri -->
+      <div class="col-md-6 pe-md-5 mt-4 mt-md-0" data-aos="fade-right">
+        <h3 class="fw-bold mb-3">Benturan Benda Langit (Meteor atau Asteroid)</h3>
+        <p class="text-muted">Meskipun jarang terjadi, benturan benda langit seperti meteor atau asteroid yang jatuh ke 
           laut dapat menimbulkan tsunami besar. Energi tumbukan yang sangat kuat mampu memindahkan volume air laut 
           dalam jumlah besar secara tiba-tiba, sehingga memicu gelombang tinggi yang menyebar ke berbagai arah.</p>
       </div>
-    </div padding-bottom = 20px>
-  </section>
+    </div>
 
+  </div>
+</section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-14">
-          <div class="section-header text-center pb-4 " style="margin-top: 30px;"> <!-- Mengurangi padding-bottom dari pb-5 ke pb-3 -->
-            <h2 class="fw-bold mb- display-5">Informasi Utama</h2> <!-- Menambahkan margin-bottom -->
-          </div>
-        </div>
+<section id="penyebab" class="py-5">
+  <div class="container">
+
+    <!-- Penyebab 1 -->
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+        <img src="assets/penyebab1.jpg" class="img-fluid rounded-4 shadow" alt="Gempa Bumi Bawah Laut">
       </div>
-
-      <!-- Single row wrapping both cards -->
-      <div class="row justify-content-center">
-        <!-- Card 1 -->
-        <div class="col-12 col-md-8 col-lg-6 mb-4">
-          <div class="card text-center shadow" style="max-width: 600px;">
-            <div class="card-header bg-dark text-white">
-              <h4 class="card-title mb-0">Peta Risiko Tsunami Per Desa Wilayah DIY</h4>
-            </div>
-            <div class="card-body">
-              <div class="d-flex justify-content-center">
-                <img src="assets/peta bahaya tsunami.jpg" alt="Peta Skala Desa" class="img-fluid"
-                  style="max-height: 300px; width: auto;">
-              </div>
-              <div class="p-4">
-                <a href="#drive" class="btn btn-dark btn-sm py-1 px-3">
-                  Lihat Peta
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-12 col-md-8 col-lg-6 mb-4">
-          <div class="card text-center shadow" style="max-width: 600px;">
-            <div class="card-header bg-dark text-white">
-              <h4 class="card-title mb-0">Visualisasi 3D Gelombang Tsunami Pesisir DIY</h4>
-            </div>
-            <div class="card-body">
-              <div class="d-flex justify-content-center">
-                <img src="assets/peta bahaya tsunami.jpg" alt="Peta Skala Desa" class="img-fluid"
-                  style="max-height: 300px; width: auto;">
-              </div>
-              <div class="p-4">
-                <a href="#drive" class="btn btn-dark btn-sm py-1 px-3">
-                  Lihat Peta
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-md-6 ps-md-5" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="fw-bold mb-3">Gempa Bumi Bawah Laut</h2>
+        <p class="text-muted">Gempa bumi bawah laut adalah penyebab paling umum tsunami. Ketika lempeng tektonik bergeser secara tiba-tiba, volume besar air laut terdorong dan menghasilkan gelombang besar.</p>
       </div>
     </div>
-  </section>
+
+    <!-- Penyebab 2 -->
+    <div class="row mb-5 align-items-center flex-md-row-reverse">
+      <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+        <img src="assets/penyebab2.jpg" class="img-fluid rounded-4 shadow" alt="Letusan Gunung Api">
+      </div>
+      <div class="col-md-6 pe-md-5" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="fw-bold mb-3">Letusan Gunung Api Bawah Laut</h2>
+        <p class="text-muted">Letusan gunung api di dasar laut dapat mendorong air laut secara ekstrem, memicu tsunami. Letusan ini bisa disertai dengan gempa dan aktivitas vulkanik lainnya.</p>
+      </div>
+    </div>
+
+    <!-- Penyebab 3 -->
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-up">
+        <img src="assets/penyebab3.jpg" class="img-fluid rounded-4 shadow" alt="Longsor Bawah Laut">
+      </div>
+      <div class="col-md-6 ps-md-5" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="fw-bold mb-3">Longsor Bawah Laut</h2>
+        <p class="text-muted">Tanah longsor di dasar laut akibat gempa atau pergerakan lempeng bisa menyebabkan tsunami lokal. Dampaknya bisa sangat cepat di daerah pesisir terdekat.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- Information -->
-  <section id="team" class="team section-padding" >
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-header text-center pb-5">
-            <h2 class="fw-bold mb-4 display-5">INSTITUSI TERKAIT INFORMASI TSUNAMI</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="card text-center">
-            <div class="card-body">
-              <!-- Perubahan pada bagian gambar -->
-              <div class="mx-auto mb-3" style="width: 150px; height: 150px; overflow: hidden;">
-                <img src="assets/BMKG logo.png" alt="BMKG Yogyakarta" class="img-fluid rounded-circle h-100 w-100"
-                  style="object-fit: cover;">
-              </div>
-
-              <h4 class="card-title py-2">BMKG</h4>
-              <p class="card-text" bol><b>Stasiun Geofisika Sleman</b><br>
-                Melakukan pengamatan, pengumpulan, analisis, dan penyebaran data, serta pelayanan jasa Geofisika
-                termasuk gempabumi dan tsunami</p>
-              <p class="socials">
-                <a href="https:wa.me/+62895368777957" class="social"><i
-                    class="fa-brands fa-whatsapp text-dark mx-1"></i></a>
-                <a href="https://www.instagram.com/stageofsleman/?hl=en" class="social"><i
-                    class="fa-brands fa-instagram text-dark mx-1"></i></a>
-                <a href="https://x.com/bmkgjogja" class="social"><i
-                    class="fa-brands fa-square-x-twitter text-dark mx-1"></i></a>
-                <a href="https://t.me/s/InaTEWS_BMKG" class="social"><i
-                    class="fa-brands fa-telegram text-dark mx-1"></i></a>
-                <a href="https://www.bmkg.go.id/profil" class="social"><i
-                    class="fa-solid fa-globe text-dark mx-1"></i></a>
-                <a href="https://maps.app.goo.gl/2jT69z2LxSpX1vtv5" class="social"><i
-                    class="fa-solid fa-location-dot text-dark mx-1"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="card text-center">
-            <div class="card-body">
-              <!-- Perubahan pada bagian gambar -->
-              <div class="mx-auto mb-3" style="width: 150px; height: 150px; overflow: hidden;">
-                <img src="assets/LOGOBPBD.png" alt="BPBD Yogyakarta" class="img-fluid rounded-circle h-100 w-100"
-                  style="object-fit: cover;">
-              </div>
-
-              <h4 class="card-title py-2">BPBD</h4>
-              <p class="card-text" bol><b>BPBD Yogyakarta</b><br>
-                Membantu penanggulangan bencana meliputi pencegahan, mitigasi,
-                kesiapsiagaan, tanggap darurat, rehabilitasi, dan rekonstruksi </p>
-              <p class="socials">
-                <a href="https:wa.me/+62274555584" class="social"><i
-                    class="fa-brands fa-whatsapp text-dark mx-1"></i></a>
-                <a href="https://www.instagram.com/bpbd_diy/" class="social"><i
-                    class="fa-brands fa-instagram text-dark mx-1"></i></a>
-                <a href="https://x.com/BPBDDIY" class="social"><i
-                    class="fa-brands fa-square-x-twitter text-dark mx-1"></i></a>
-                <a href="mailto:pusdalopsdiy@gmail.com" class="social"><i
-                    class="fa-solid fa-envelope text-dark mx-1"></i></a>
-                <a href="https://bpbd.jogjaprov.go.id/" class="social"><i
-                    class="fa-solid fa-globe text-dark mx-1"></i></a>
-                <a href="https://maps.app.goo.gl/eTM3W3XjztNPVHDSA" class="social"><i
-                    class="fa-solid fa-location-dot text-dark mx-1"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="card text-center">
-            <div class="card-body">
-              <!-- Perubahan pada bagian gambar -->
-              <div class="mx-auto mb-3" style="width: 150px; height: 150px; overflow: hidden;">
-                <img src="assets/LOGOBASARNAS.png" alt="BASARNAS Yogyakarta"
-                  class="img-fluid rounded-circle h-100 w-100" style="object-fit: cover;">
-              </div>
-
-              <h4 class="card-title py-2">BASARNAS</h4>
-              <p class="card-text" bol><b>BASARNAS Yogyakarta</b><br>
-                Membantu pemerintah dalam proses pencarian dan pertolongan sesuai dengan peraturan perundang-undangan
-                dengan fokus pada evakuasi korban bencana</p>
-              <p class="socials">
-                <a href="https:wa.me/+6281229978883" class="social"><i
-                    class="fa-brands fa-whatsapp text-dark mx-1"></i></a>
-                <a href="https://www.instagram.com/basarnas_yogyakarta?utm_medium=copy_link" class="social"><i
-                    class="fa-brands fa-instagram text-dark mx-1"></i></a>
-                <a href="https://x.com/basarnas114yyk" class="social"><i
-                    class="fa-brands fa-square-x-twitter text-dark mx-1"></i></a>
-                <a href="mailto:sar.jogja@basarnas.go.id" class="social"><i
-                    class="fa-solid fa-envelope text-dark mx-1"></i></a>
-                <a href="https://yogyakarta.basarnas.go.id/" class="social"><i
-                    class="fa-solid fa-globe text-dark mx-1"></i></a>
-                <a href="https://maps.app.goo.gl/PPsPuzYGwjbv97qs7" class="social"><i
-                    class="fa-solid fa-location-dot text-dark mx-1"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <div class="card text-center">
-            <div class="card-body">
-              <!-- Perubahan pada bagian gambar -->
-              <div class="mx-auto mb-3" style="width: 150px; height: 150px; overflow: hidden;">
-                <img src="assets/PEMDA.png" alt="BASARNAS Yogyakarta" class="img-fluid rounded-circle h-60 w-80"
-                  style="object-fit: cover;">
-              </div>
-
-              <h4 class="card-title py-2">PEMDA</h4>
-              <p class="card-text" bol><b>Pemerintah Daerah DIY</b><br>
-                Menyusun dan mengimplementasikan kebijakan penanggulangan bencana secara komprehensif dari proses
-                mitigasi hingga evakuasi</p>
-              <p class="socials">
-                <a href="https:wa.me/+62274562811" class="social"><i
-                    class="fa-brands fa-whatsapp text-dark mx-1"></i></a>
-                <a href="https://www.instagram.com/humasjogja" class="social"><i
-                    class="fa-brands fa-instagram text-dark mx-1"></i></a>
-                <a href="https://id-id.facebook.com/humaspemdadiy/" class="social"><i
-                    class="fa-brands fa-square-facebook text-dark mx-1"></i></a>
-                <a href="mailto:santel@jogjaprov.go.id" class="social"><i
-                    class="fa-solid fa-envelope text-dark mx-1"></i></a>
-                <a href="https://yogyakarta.basarnas.go.id/" class="social"><i
-                    class="fa-solid fa-globe text-dark mx-1"></i></a>
-                <a href="https://maps.app.goo.gl/cj2Yz9gMapqTBBnQ7" class="social"><i
-                    class="fa-solid fa-location-dot text-dark mx-1"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+<section id="team" class="team section-padding">
+  <div class="container">
+    <div class="text-center pb-5" data-aos="fade-up">
+      <h2 class="fw-bold mb-4 display-5">INSTITUSI TERKAIT INFORMASI TSUNAMI</h2>
     </div>
-  </section>
+    <div class="row g-4">
+
+      <!-- BMKG -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="card card-custom text-center p-3">
+          <div class="mx-auto mb-3" style="width: 130px; height: 130px; overflow: hidden;">
+            <img src="assets/BMKG logo.png" alt="BMKG Yogyakarta" class="img-fluid rounded-circle w-100 h-100" style="object-fit: cover;">
+          </div>
+          <h4 class="card-title">BMKG</h4>
+          <p class="card-text"><strong>Stasiun Geofisika Sleman</strong><br>Pengamatan dan penyebaran data geofisika, gempa, dan tsunami.</p>
+          <div class="socials mt-2">
+            <a href="https://wa.me/+62895368777957"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/stageofsleman/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/bmkgjogja"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://t.me/s/InaTEWS_BMKG"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://www.bmkg.go.id/profil"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://maps.app.goo.gl/2jT69z2LxSpX1vtv5"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BPBD DIY -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card card-custom text-center p-3">
+          <div class="mx-auto mb-3" style="width: 130px; height: 130px; overflow: hidden;">
+            <img src="assets/LOGOBPBD.png" alt="BPBD DIY" class="img-fluid rounded-circle w-100 h-100" style="object-fit: cover;">
+          </div>
+          <h4 class="card-title">BPBD</h4>
+          <p class="card-text"><strong>Badan Penanggulangan Bencana Daerah DIY</strong><br>Koordinasi penanggulangan bencana, evakuasi, dan sosialisasi kesiapsiagaan tsunami.</p>
+          <div class="socials mt-2">
+            <a href="https://wa.me/+628122583748"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/bpbddiy/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/bpbddiy"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://bpbddiy.bpbd.go.id/"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://maps.app.goo.gl/ESG9KzVxnEDh4UoT6"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BASARNAS -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="card card-custom text-center p-3">
+          <div class="mx-auto mb-3" style="width: 130px; height: 130px; overflow: hidden;">
+            <img src="assets/LOGOBASARNAS.png" alt="BASARNAS" class="img-fluid rounded-circle w-100 h-100" style="object-fit: cover;">
+          </div>
+          <h4 class="card-title">BASARNAS</h4>
+          <p class="card-text"><strong>Kantor SAR Yogyakarta</strong><br>Pelaksana evakuasi dan penyelamatan korban saat terjadi bencana tsunami dan darurat lainnya.</p>
+          <div class="socials mt-2">
+            <a href="https://wa.me/+628111290110"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/basarnas_yogyakarta/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/SAR_Nasional"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://sar.yogyakarta.go.id/"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://maps.app.goo.gl/Y2Hz5U1EQPGkqZMP9"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PEMDA DIY -->
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="card card-custom text-center p-3">
+          <div class="mx-auto mb-3" style="width: 130px; height: 130px; overflow: hidden;">
+            <img src="assets/LOGODIY.png" alt="PEMDA DIY" class="img-fluid rounded-circle w-100 h-100" style="object-fit: cover;">
+          </div>
+          <h4 class="card-title">PEMDA DIY</h4>
+          <p class="card-text"><strong>Pemerintah Daerah Istimewa Yogyakarta</strong><br>Penyusunan kebijakan, regulasi, dan dukungan infrastruktur mitigasi bencana tsunami.</p>
+          <div class="socials mt-2">
+            <a href="https://wa.me/+622744801211"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/humasjogja/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/humas_jogja"><i class="fa-brands fa-square-x-twitter"></i></a>
+            <a href="https://jogjaprov.go.id/"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://maps.app.goo.gl/kZ4QgK4FvYRCmSpW6"><i class="fa-solid fa-location-dot"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 
 
   <!-- Footer -->
-  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
-    <div class="container">
-      <div class="row text-center text-md-start align-items-start">
-
-        <!-- Kolom 1: Logo & Deskripsi -->
-        <div class="col-md-4 mb-4">
-          <h4 class="fw-bold text-info">SIGAP TSUNAMI</h4>
-          <p class="small">
-            Sistem Informasi Geospasial Ancaman Potensial Tsunami wilayah DIY. Didesain untuk membantu masyarakat agar
-            selalu siaga dan cepat tanggap dalam menghadapi potensi tsunami.
-          </p>
-        </div>
-
-        <!-- Kolom 2: Kontak -->
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-semibold text-info mb-3">Kontak Kami</h5>
-          <ul class="list-unstyled small">
-            <li class="mb-2"><i class="bi bi-envelope me-2 text-warning"></i> sigap@tsunami-diy.id</li>
-            <li class="mb-2"><i class="bi bi-telephone me-2 text-warning"></i> +62 812 3456 7890</li>
-            <li><i class="bi bi-geo-alt me-2 text-warning"></i> Yogyakarta, Indonesia</li>
-          </ul>
-        </div>
-
-        <!-- Kolom 3: Media Sosial -->
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-semibold text-info mb-3">Ikuti Kami</h5>
-          <div>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-light fs-5"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
-
-      </div>
-
-      <hr class="border-secondary my-4">
-
-      <!-- Copyright -->
-      <div class="text-center small">
-        <p class="mb-0">&copy; 2025 SIGAP TSUNAMI | Dikembangkan oleh Mahasiswa GIS Universitas Gadjah Mada</p>
-      </div>
+<footer class="bg-white text-dark py-4 mt-5 border-top">
+  <div class="container text-center">
+    <div class="mb-3">
+      <a href="https://instagram.com" class="text-dark mx-2 fs-5"><i class="fab fa-instagram"></i></a>
+      <a href="https://x.com" class="text-dark mx-2 fs-5"><i class="fab fa-twitter"></i></a>
+      <a href="https://t.me" class="text-dark mx-2 fs-5"><i class="fab fa-telegram"></i></a>
+      <a href="https://wa.me" class="text-dark mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
     </div>
-  </footer>
+    <p class="mb-0 small text-muted">
+      &copy; 2025 SIGAP TSUNAMI — Mahasiswa GIS Universitas Gadjah Mada
+    </p>
+  </div>
+</footer>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+     document.querySelectorAll('.card img').forEach(img => {
+    img.addEventListener('mouseover', () => img.style.transform = 'scale(1.1)');
+    img.addEventListener('mouseout', () => img.style.transform = 'scale(1)');
+  });
+  </script>
 </body>
-
 </html>
