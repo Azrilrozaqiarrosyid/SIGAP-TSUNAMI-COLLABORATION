@@ -1,0 +1,386 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAP TSUNAMI DIY</title>
+
+  <!-- Bootstrap & Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS & Animate -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<style>
+  .carousel-item img {
+    object-fit: cover;
+    height: 100vh;
+    filter: brightness(70%);
+    transition: transform 3s ease;
+  }
+
+  .carousel-item.active img {
+    transform: scale(1.05);
+  }
+
+  .carousel-caption {
+    bottom: 20%;
+    animation-duration: 1s;
+  }
+
+  .carousel-caption h2,
+  .carousel-caption h5,
+  .carousel-caption h3,
+  .carousel-caption p {
+    animation: fadeInUp;
+    animation-duration: 1.2s;
+    animation-fill-mode: both;
+  }
+
+  .carousel-caption h2 {
+    animation-delay: 0.2s;
+  }
+
+  .carousel-caption h5 {
+    animation-delay: 0.4s;
+  }
+
+  .carousel-caption h3 {
+    animation-delay: 0.6s;
+  }
+
+  .carousel-caption p {
+    animation-delay: 0.8s;
+  }
+
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    opacity: 0.7;
+    transition: 0.3s;
+  }
+
+  .carousel-indicators .active {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+  .navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar-brand span {
+    background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    animation: gradient-move 5s infinite alternate;
+  }
+
+  @keyframes gradient-move {
+    from {
+      background-position: 0%;
+    }
+
+    to {
+      background-position: 100%;
+    }
+  }
+
+  .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0d6efd;
+    transition: 0.3s;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .nav-link:hover {
+    color: #0d6efd !important;
+    transform: translateY(-2px);
+  }
+
+  .navbar-brand:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+  }
+
+  .data-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .data-card {
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 1.5rem;
+    transition: all 0.35s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    border: 2px solid transparent;
+    overflow: hidden;
+  }
+
+  .data-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    border-color: #0d6efd;
+    z-index: 10;
+  }
+
+  /* Glowing background effect */
+  .data-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(13, 110, 253, 0.2), transparent);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    z-index: -1;
+  }
+
+  .data-card:hover::before {
+    transform: scale(1);
+  }
+
+  /* Icon/gambar animasi saat hover */
+  .preview-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 1.2rem;
+    transition: transform 0.5s ease;
+  }
+
+  .data-card:hover .preview-img {
+    transform: translateY(-10px) scale(1.1) rotate(-2deg);
+  }
+
+  /* Text efek */
+  .data-card h4 {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+
+  .data-card:hover h4 {
+    color: #0d6efd;
+  }
+
+  .hover-shadow:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card .btn {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .card .btn:hover {
+    transform: scale(1.1);
+  }
+
+  .card-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    min-height: 430px;
+  }
+
+
+  .card-custom:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-custom img {
+    border: 4px solid #ffffff;
+    transition: transform 0.3s ease;
+  }
+
+  .card-custom:hover img {
+    transform: scale(1.05);
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .socials a {
+    font-size: 1.2rem;
+    transition: color 0.2s;
+  }
+
+  .socials a:hover {
+    color: #000000;
+  }
+
+  /* FITUR AGAR TIDAK TERTUTUP */
+  #fitur {
+    scroll-margin-top: 100px;
+  }
+
+  #fitur::before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin-top: -100px;
+  }
+
+  footer a:hover {
+    color: #007BFF !important;
+    transition: 0.3s;
+  }
+</style>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate_animated animate_fadeInDown">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span>SIGAP TSUNAMI</span> - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse animate_animated animate_fadeInRight" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="Beranda.html">Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#fitur">Fitur</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Informasi.html">Informasi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Map.html">Peta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Tentang.html">Tentang</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- isi utama -->
+
+  <!-- SECTION TENTANG -->
+  <section class="py-5">
+    <div class="container">
+      <div class="bg-white rounded-4 shadow-lg p-5 mx-auto" style="max-width: 1000px;">
+        <h1 class="fw-bold text-center mb-4">Tentang SIGAP Tsunami</h1>
+
+        <!-- 1. Tujuan -->
+        <h5 class="fw-semibold mt-4">🎯 Tujuan Website</h5>
+        <p>
+          SIGAP Tsunami adalah platform edukasi dan mitigasi bencana tsunami berbasis spasial. Website ini bertujuan
+          untuk memberikan informasi penting seperti zona rawan tsunami, jalur evakuasi, dan titik evakuasi akhir kepada
+          masyarakat Daerah Istimewa Yogyakarta secara interaktif dan mudah diakses.
+        </p>
+
+        <!-- 2. Latar Belakang -->
+        <h5 class="fw-semibold mt-4">🌊 Latar Belakang</h5>
+        <p>
+          DIY, khususnya wilayah pesisir Bantul dan Kulon Progo, memiliki potensi risiko tsunami yang tinggi akibat
+          aktivitas tektonik di zona subduksi selatan Jawa. Dengan pemetaan digital dan penyebaran informasi yang tepat,
+          kami ingin meningkatkan kesiapsiagaan masyarakat.
+        </p>
+
+        <!-- 3. Tim Pengembang -->
+        <h5 class="fw-semibold mt-4">👥 Tim Pengembang</h5>
+        <p>
+          Situs ini dikembangkan oleh mahasiswa Sistem Informasi Geografis UGM dengan dukungan dari berbagai sumber
+          resmi seperti BMKG, BPBD DIY, dan InaRISK. Kami berfokus pada edukasi berbasis data spasial yang akurat dan
+          mudah dipahami.
+        </p>
+
+        <!-- 4. Fitur Utama -->
+        <h5 class="fw-semibold mt-4">🗺️ Fitur yang Tersedia</h5>
+        <ul>
+          <li>Peta Bahaya Tsunami Skala Desa</li>
+          <li>Peta Interaktif DIY</li>
+          <li>Jalur & Titik Evakuasi</li>
+          <li>Buku Panduan & Edukasi</li>
+        </ul>
+
+        <!-- 5. Sumber Data -->
+        <h5 class="fw-semibold mt-4">📊 Sumber Data</h5>
+        <ul>
+          <li>BMKG – Data gempabumi dan zona rawan</li>
+          <li>BPBD DIY – Jalur evakuasi dan titik kumpul</li>
+          <li>QGIS – Pengolahan data spasial</li>
+          <li>OpenStreetMap – Basemap</li>
+        </ul>
+
+        <!-- 6. Kontak -->
+        <h5 class="fw-semibold mt-4">📩 Kontak Kami</h5>
+        <p>Jika Anda memiliki saran, kritik, atau ingin bekerja sama, silakan hubungi kami melalui:</p>
+        <ul>
+          <li>Email: <a href="mailto:sigaptsunami@ugm.ac.id">sigaptsunami@ugm.ac.id</a></li>
+          <li>Instagram: <a href="https://instagram.com/sigaptsunami">@sigaptsunami</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+
+</html>

@@ -2,23 +2,158 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SIGAP TSUNAMI DIY</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+  <!-- Bootstrap & Icon -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- AOS & Animate -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #C5DFDF;
+    .data-section {
+      padding: 4rem 0;
+      background-color: #ee1212;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .data-card {
+      background-color: #fff;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 1.5rem;
+      transition: all 0.35s ease;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      position: relative;
+      border: 2px solid transparent;
+      overflow: hidden;
+    }
+
+    .data-card:hover {
+      transform: scale(1.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      border-color: #0d6efd;
+      z-index: 10;
+    }
+
+    /* Glowing background effect */
+    .data-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(13, 110, 253, 0.2), transparent);
+      transform: scale(0);
+      transition: transform 0.5s ease;
+      z-index: -1;
+    }
+
+    .data-card:hover::before {
+      transform: scale(1);
+    }
+
+
+
+    /* Text efek */
+    .data-card h4 {
+      margin-top: 0.5rem;
+      font-weight: 600;
       color: #333;
-      scroll-padding-top: 70px;
-      /* untuk smooth scroll dan fixed navbar */
+      transition: color 0.3s ease;
+    }
+
+    .data-card:hover h4 {
+      color: #0d6efd;
+    }
+
+    .hover-shadow:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease-in-out;
+    }
+
+
+    footer a:hover {
+      color: #007BFF !important;
+      transition: 0.3s;
+    }
+
+
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.8);
+      transition: background 0.3s ease-in-out;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand span {
+      background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+      animation: gradient-move 5s infinite alternate;
+    }
+
+    @keyframes gradient-move {
+      from {
+        background-position: 0%;
+      }
+
+      to {
+        background-position: 100%;
+      }
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #0d6efd;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: #0d6efd !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease;
     }
 
     .section-title {
@@ -81,20 +216,44 @@
     .ratio iframe:hover {
       transform: scale(1.03);
     }
+
+    /* CARD MITIGASI */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .data-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 300px;
+      /* 💡 ini yang memperkecil tiap kartu */
+      flex: 1 1 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   </style>
 </head>
 
 <body>
   <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate_animated animate_fadeInDown">
     <div class="container">
-      <a class="navbar-brand" href="#"><span class="text-biru-muda">SIGAP TSUNAMI </span class="text-primary"> -
-        ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ</a>
+      <a class="navbar-brand" href="#">
+        <span>SIGAP TSUNAMI</span> - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse animate_animated animate_fadeInRight" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="Beranda.html">Beranda</a>
@@ -103,13 +262,10 @@
             <a class="nav-link" href="Informasi.html">Informasi</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="PetaTsunami.html">Peta</a>
+            <a class="nav-link" href="Map.html">Peta</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Kontak</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="peta_RS.html">Tentang</a>
+            <a class="nav-link" href="Tentang.html">Tentang</a>
           </li>
         </ul>
       </div>
@@ -209,7 +365,7 @@
             </tr>
           </tbody>
         </table>
-        <a href="PetaTsunami.html" class="btn btn-outline-primary mt-3">Lihat Peta Dampak</a>
+        <a href="Map.html" class="btn btn-outline-primary mt-3">Lihat Peta Dampak</a>
       </div>
 
       <!-- TITIK EVAKUASI -->
@@ -229,9 +385,8 @@
               <li><strong>Tempat Evakuasi Akhir (TEA):</strong> Lokasi permanen yang dipilih berdasarkan ketinggian dan
                 keamanan sebagai tujuan utama evakuasi seperti Bandara YIA.</li>
             </ul>
-            <a href="https://yogyakarta.bmkg.go.id/wp-content/plugins/pdfjs-viewer-shortcode/pdfjs/web/viewer.php?file=https://yogyakarta.bmkg.go.id/wp-content/uploads/2024/10/Buku-Kajian-Tsunami-Stageof-Sleman_compressed.pdf&attachment_id=32242&dButton=true&pButton=true&oButton=false&sButton=true#zoom=auto&pagemode=none&_wpnonce=20b8ed4eb5" 
-            class="btn btn-warning px-4 py-2 fs-5"
-              target="_blank">
+            <a href="https://yogyakarta.bmkg.go.id/wp-content/plugins/pdfjs-viewer-shortcode/pdfjs/web/viewer.php?file=https://yogyakarta.bmkg.go.id/wp-content/uploads/2024/10/Buku-Kajian-Tsunami-Stageof-Sleman_compressed.pdf&attachment_id=32242&dButton=true&pButton=true&oButton=false&sButton=true#zoom=auto&pagemode=none&_wpnonce=20b8ed4eb5"
+              class="btn btn-warning px-4 py-2 fs-5" target="_blank">
               Lihat Buku Bahaya Tsunami DIY
             </a>
           </div>
@@ -251,90 +406,90 @@
 
 
   <!-- MITIGASI -->
-  <section>
-    <!-- Card besar sebagai background -->
-    <!-- <div class="card p-4 shadow rounded " style="max-width: 1200px; margin: auto;"> -->
-    <!-- Judul -->
-    <div class="row">
-      <div class="col-12">
-        <div class="section-header text-center pb-4">
-          <h2 class="fw-bold mb-4 display-5">Bagaimana cara mitigasi bencana tsunami?</h2>
-        </div>
-      </div>
-    </div>
-
-    <div class="card-container">
-      <!-- Kartu 1 -->
-      <div class="data-card">
-        <h4><b>Tanggap gempa</b></h4>
-        <img src="assets/gempa.png" alt="gempa" class="preview-img">
-        <p>Waspadalah jika terjadi gempabumi kuat atau yang dirasakan dalam waktu lama.
-          Segera jauhi pantai dan tepi sungai serta cari informasi</p>
-      </div>
-
-      <!-- Kartu 2 -->
-      <div class="data-card">
-        <h3><b>Tanggap peringatan</b></h3>
-        <img src="assets/gunungapi.png" alt="gunungapi" class="preview-img">
-        <p>Cari informasi peringatan dini tsunami dari BMKG melalui TV, Radio, atau media lain.
-          Jika terdengar bunyi sirine atau peringatan, segera evakuasi</p>
-      </div>
-
-      <!-- Kartu 3 -->
-      <div class="data-card">
-        <h3><b>Tanggap evakuasi</b></h3>
-        <img src="assets/longsor.png" alt="longsor" class="preview-img">
-        <p>Setelah merasakan gempa, segera evakuasi ke tempat yang aman, ikuti halur dan rambu evakuasi.
-          Jika tidak menemukan tempat aman, larilah ke tempat yang lebih tinggi dan sejauh mungkin dari pantai.</p>
-      </div>
-
-    </div padding-bottom=20px>
-  </section>
-
-
-  <!-- Footer -->
-  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+  <section id="mitigasi" class="py-5 bg-light">
     <div class="container">
-      <div class="row text-center text-md-start align-items-start">
+      <div class="bg-white p-5 rounded-4 shadow-lg mx-auto" style="max-width: 1400px;">
 
-        <!-- Kolom 1: Logo & Deskripsi -->
-        <div class="col-md-4 mb-4">
-          <h4 class="fw-bold text-info">SIGAP TSUNAMI</h4>
-          <p class="small">
-            Sistem Informasi Geospasial Ancaman Potensial Tsunami wilayah DIY. Didesain untuk membantu masyarakat agar
-            selalu siaga dan cepat tanggap dalam menghadapi potensi tsunami.
-          </p>
+        <!-- Judul -->
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8">
+            <div class="highlight-box text-center p-4 rounded-4 shadow-sm">
+              <h2 class="fw-bold">INGAT 3T?</h2>
+            </div>
+          </div>
         </div>
 
-        <!-- Kolom 2: Kontak -->
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-semibold text-info mb-3">Kontak Kami</h5>
-          <ul class="list-unstyled small">
-            <li class="mb-2"><i class="bi bi-envelope me-2 text-warning"></i> sigap@tsunami-diy.id</li>
-            <li class="mb-2"><i class="bi bi-telephone me-2 text-warning"></i> +62 812 3456 7890</li>
-            <li><i class="bi bi-geo-alt me-2 text-warning"></i> Yogyakarta, Indonesia</li>
-          </ul>
+
+        <!-- Kartu Mitigasi -->
+        <div class="row justify-content-center g-4 mb-5">
+          <!-- Kartu 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="data-card p-4 rounded-3 shadow-sm text-center h-100 bg-white hover-shadow">
+              <img src="assets/Tanggap Gempa.png" alt="Tanggap Gempa" class="img-fluid rounded mb-3"
+                style="height: 180px; object-fit: cover;">
+              <h5 class="fw-bold">Tanggap Gempa</h5>
+              <p class="mt-2">Waspadalah jika terjadi gempabumi kuat atau yang dirasakan dalam waktu lama. Segera jauhi
+                pantai dan tepi sungai serta cari informasi.</p>
+            </div>
+          </div>
+
+          <!-- Kartu 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="data-card p-4 rounded-3 shadow-sm text-center h-100 bg-white hover-shadow">
+              <img src="assets/Tanggap Peringatan.jpeg" alt="Tanggap Peringatan" class="img-fluid rounded mb-3"
+                style="height: 180px; object-fit: cover;">
+              <h5 class="fw-bold">Tanggap Peringatan</h5>
+              <p class="mt-2">Cari informasi peringatan dini tsunami dari BMKG melalui TV, Radio, atau media lain. Jika
+                terdengar bunyi sirine atau peringatan, segera evakuasi.</p>
+            </div>
+          </div>
+
+          <!-- Kartu 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="data-card p-4 rounded-3 shadow-sm text-center h-100 bg-white hover-shadow">
+              <img src="assets/Tanggap Evakuasi.png" alt="Tanggap Evakuasi" class="img-fluid rounded mb-3"
+                style="height: 180px; object-fit: cover;">
+              <h5 class="fw-bold">Tanggap Evakuasi</h5>
+              <p class="mt-2">Segera evakuasi ke tempat yang aman, ikuti jalur dan rambu evakuasi. Jika tidak menemukan
+                tempat aman, larilah ke tempat tinggi dan jauh dari pantai.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Kolom 3: Media Sosial -->
-        <div class="col-md-4 mb-4">
-          <h5 class="fw-semibold text-info mb-3">Ikuti Kami</h5>
-          <div>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-light fs-5 me-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-light fs-5"><i class="fab fa-youtube"></i></a>
+        <!-- PDF Viewer -->
+        <div class="row justify-content-center">
+          <div class="col-md-6 mb-4">
+            <h5 class="text-center fw-semibold">Buku Saku Gempabumi dan Tsunami</h5>
+            <div class="ratio ratio-4x3 shadow rounded">
+              <iframe src="assets/BMKG_Buku Saku Gempabumi dan Tsunami.pdf" frameborder="0"></iframe>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <h5 class="text-center fw-semibold">Petualangan Si Mega</h5>
+            <div class="ratio ratio-4x3 shadow rounded">
+              <iframe src="assets/petualangan-si-mega-evakuasi-tsunami_watermark.pdf" frameborder="0"></iframe>
+            </div>
           </div>
         </div>
 
       </div>
+    </div>
+  </section>
 
-      <hr class="border-secondary my-4">
 
-      <!-- Copyright -->
-      <div class="text-center small">
-        <p class="mb-0">&copy; 2025 SIGAP TSUNAMI | Dikembangkan oleh Mahasiswa GIS Universitas Gadjah Mada</p>
+
+  <!-- Footer -->
+  <footer class="bg-white text-dark py-4 mt-5 border-top">
+    <div class="container text-center">
+      <div class="mb-3">
+        <a href="https://instagram.com" class="text-dark mx-2 fs-5"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com" class="text-dark mx-2 fs-5"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me" class="text-dark mx-2 fs-5"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me" class="text-dark mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
       </div>
+      <p class="mb-0 small text-muted">
+        &copy; 2025 SIGAP TSUNAMI
+      </p>
     </div>
   </footer>
 

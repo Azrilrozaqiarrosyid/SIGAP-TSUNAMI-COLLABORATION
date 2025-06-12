@@ -5,8 +5,10 @@
 
 /* Styling dasar untuk body */
 body {
-  background: #ffffff;       /* Warna latar belakang biru muda */
-  padding-top: 80px;         /* Jarak atas agar tidak tertutup navbar */
+  background: #f1f1f0;
+  /* Warna latar belakang biru muda */
+  padding-top: 80px;
+  /* Jarak atas agar tidak tertutup navbar */
 }
 
 /* Padding atas dan bawah untuk section tertentu */
@@ -152,52 +154,52 @@ body {
 /* Swiper Carousel Cards - Bentuk Persegi Panjang Memanjang ke Samping */
 /* ----------------------------------- */
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
 
-  .data-card {
-    background: white;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    max-width: 250px;
-    flex: 1 1 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.data-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-  .data-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-  }
+.data-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
 
-  .preview-img {
-    width: 100%;
-    height: 160px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-  }
+.preview-img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
 
-  .btn-download {
-    margin-top: auto;
-    padding: 0.6rem 1.2rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+.btn-download {
+  margin-top: auto;
+  padding: 0.6rem 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-  .btn-download:hover {
-    background-color: #0056b3;
-  }
+.btn-download:hover {
+  background-color: #0056b3;
+}
 
 /* ----------------------------------- */
 
@@ -256,12 +258,14 @@ body {
   background-color: rgb(115, 126, 222);
   border-radius: 10px;
   padding: 40px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* bayangan lembut */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  /* bayangan lembut */
 }
 
 .card-container {
   display: flex;
-  gap: 64px; /* atur sesuai kebutuhan: 16px, 24px, 32px, dst */
+  gap: 64px;
+  /* atur sesuai kebutuhan: 16px, 24px, 32px, dst */
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -383,71 +387,72 @@ body {
   }
 
   .about-section {
-  padding: 80px 0;
-  background: linear-gradient(to right, #e0f7fa, #ffffff);
-}
+    padding: 80px 0;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+  }
 
-.about-card {
-  background-color: #fff;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+  .about-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
 
-.about-card:hover {
-  transform: translateY(-5px);
-}
+  .about-card:hover {
+    transform: translateY(-5px);
+  }
 
-.about-images {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+  .about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.image-wrapper img {
-  width: 100%;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  .image-wrapper img {
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-.image-wrapper img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
+  .image-wrapper img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
 
-.about-text h2 {
-  font-size: 2.5rem;
-  color: #007B8A;
-}
+  .about-text h2 {
+    font-size: 2.5rem;
+    color: #007B8A;
+  }
 
-.about-text p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #333;
-  text-align: justify;
-}
+  .about-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+  }
 
-.btn-animate {
-  background-color: #ffb300;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 30px;
-  color: white;
-  font-weight: bold;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-}
+  .btn-animate {
+    background-color: #ffb300;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  }
 
-.btn-animate:hover {
-  background-color: #ffa000;
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-}
-.carousel-item img {
+  .btn-animate:hover {
+    background-color: #ffa000;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .carousel-item img {
     object-fit: cover;
     height: 100vh;
     filter: brightness(70%);
@@ -521,6 +526,7 @@ body {
     from {
       background-position: 0%;
     }
+
     to {
       background-position: 100%;
     }
@@ -555,7 +561,7 @@ body {
     transform: scale(1.05);
     transition: 0.3s ease;
   }
-  
+
   text-gradient {
     background: linear-gradient(to right, #007bff, #6610f2);
     -webkit-background-clip: text;
@@ -567,15 +573,18 @@ body {
       transform: scale(1);
       opacity: 0.9;
     }
+
     50% {
       transform: scale(1.2);
       opacity: 0.6;
     }
+
     100% {
       transform: scale(1);
       opacity: 0.9;
     }
   }
+
   .data-section {
     background-color: #E7F2F2;
     padding: 60px 20px;
@@ -610,7 +619,8 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   }
 
-  .data-card h4, .data-card h3 {
+  .data-card h4,
+  .data-card h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #1A3D3D;
@@ -638,4 +648,18 @@ body {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     z-index: 2;
   }
+
+  /* CARD FITUR */
+  .card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  
+
+
+
+
+
 }
