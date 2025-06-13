@@ -27,8 +27,10 @@
 
   <!-- Chart -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
 
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dearflip@2.0.2/dist/css/dflip.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dearflip@2.0.2/dist/js/dflip.min.js"></script>
 
   <style>
     .data-section {
@@ -252,6 +254,12 @@
     canvas#evakuasiChart {
       max-height: 300px;
     }
+
+    .dflip-book {
+      width: 80%;
+      height: 600px;
+    }
+
   </style>
 </head>
 
@@ -324,7 +332,7 @@
         </div>
       </div>
 
-            <!-- SECTION 2: Area Terdampak -->
+      <!-- SECTION 2: Area Terdampak -->
       <div class="card mb-4 shadow-sm p-4">
         <h2 class="section-title">Area Terdampak Tsunami dan Lokasi Evakuasi</h2>
         <table class="table table-bordered">
@@ -597,6 +605,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Pemanggilan PDF sebagai Flipbook -->
+  <div class="dflip-book" source="assets/petualangan-si-mega-evakuasi-tsunami_watermark.pdf" id="flipbook"></div>
 
 
 
