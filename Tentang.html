@@ -445,6 +445,77 @@
   margin: 0;
 }
 
+.faq-section-custom {
+  background-color: #000;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+.faq-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+.faq-subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+.faq-link {
+  color: #0ed3ff;
+  text-decoration: none;
+}
+
+.faq-link:hover {
+  text-decoration: underline;
+}
+
+.faq-item-custom {
+  border-bottom: 1px solid #555;
+  padding: 15px 0;
+}
+
+.faq-question-custom {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.faq-question-custom .arrow {
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  color: #fff;
+}
+
+.faq-item-custom.active .arrow {
+  transform: rotate(180deg);
+}
+
+.faq-answer-custom {
+  max-height: 0;
+  overflow: hidden;
+  color: #ccc;
+  margin-top: 10px;
+  font-size: 15px;
+  transition: max-height 0.4s ease;
+}
+
+.faq-item-custom.active .faq-answer-custom {
+  max-height: 200px;
+}
+
+
+
 </style>
 
 <body>
@@ -586,7 +657,66 @@
       </div>
     </div>
   </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section class="faq-section-custom">
+  <div class="container">
+    <div class="row justify-content-center align-items-start">
+      <!-- Left Side -->
+      <div class="col-lg-5 mb-4">
+        <h2 class="faq-title">FAQS</h2>
+        <p class="faq-subtitle">
+          Tidak menemukan jawaban yang kamu cari? 
+          <br/> <strong>hubungi tim kami</strong> melalui email ke
+          <br/>
+          <a href="mailto:stageof.yogya@bmkg.go.id" class="faq-link">stageof.yogya@bmkg.go.id</a>
+        </p>
+      </div>
+
+      <!-- Right Side -->
+      <div class="col-lg-7">
+        <div class="faq-item-custom active">
+          <button class="faq-question-custom">
+            <span>Apa itu SIGAP Tsunami?</span>
+            <span class="arrow">⌃</span>
+          </button>
+          <div class="faq-answer-custom">
+           SIGAP Tsunami adalah platform edukatif dan interaktif yang menyediakan informasi, pemetaan, dan panduan kesiapsiagaan menghadapi bencana tsunami di DIY.
+    </div>
+        </div>
+
+        <div class="faq-item-custom">
+          <button class="faq-question-custom">
+            <span>Bagaimana cara mengetahui wilayah rawan tsunami?</span>
+            <span class="arrow">⌃</span>
+          </button>
+          <div class="faq-answer-custom">
+             Kamu bisa melihat peta interaktif rawan tsunami yang tersedia di bagian peta digital SIGAP Tsunami.
+    </div>
+        </div>
+
+        <div class="faq-item-custom">
+          <button class="faq-question-custom">
+            <span>Apa yang harus dilakukan saat terjadi peringatan tsunami?</span>
+            <span class="arrow">⌃</span>
+          </button>
+          <div class="faq-answer-custom">
+            Segera evakuasi menuju tempat yang lebih tinggi atau titik evakuasi terdekat dan ikuti instruksi dari BPBD setempat.
+    </div>
+        </div>
+
+        <div class="faq-item-custom">
+          <button class="faq-question-custom">
+            <span>Apakah SIGAP Tsunami tersedia dalam bentuk aplikasi?</span>
+            <span class="arrow">⌃</span>
+          </button>
+          <div class="faq-answer-custom">
+            Untuk saat ini SIGAP Tsunami tersedia dalam bentuk website responsif, dan sedang dikembangkan untuk versi mobile ke depannya.
+    </div>
+        </div>
       </div>
     </div>
   </div>
@@ -630,6 +760,15 @@
       }
     });
   </script>
+  <script>
+  document.querySelectorAll('.faq-question-custom').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item-custom');
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
 </body>
 
 </html>
