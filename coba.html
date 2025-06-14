@@ -1,173 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Horizontal Panel with Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JAGA SELATAN - Galeri Peta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: Arial, sans-serif;
-      overflow-x: hidden;
-      background-color: #f8f8f8;
+      margin: 0;
+      font-family: 'Lexend', sans-serif;
+      background: linear-gradient(180deg, #e0f7fa, #fff);
+      color: #2c3e50;
     }
 
-    .horizontal-section {
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background: linear-gradient(135deg, #0288d1, #26c6da);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    .scroll-container {
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .filters {
       display: flex;
-      height: 100%;
-    }
-
-    .panel {
-      flex: 0 0 100vw;
-      height: 100%;
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
-      background-color: #fff;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem 1rem 0;
+      animation: fadeIn 0.8s;
     }
 
-    .panel h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+    .filters select,
+    .filters input {
+      padding: 0.8rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      min-width: 200px;
+      transition: all 0.3s;
     }
 
-    .panel p {
-      max-width: 400px;
-      margin-bottom: 1rem;
+    .filters input:focus,
+    .filters select:focus {
+      outline: none;
+      border-color: #0288d1;
+      box-shadow: 0 0 8px rgba(2, 136, 209, 0.2);
     }
 
-    .panel ul {
-      list-style: none;
-      padding-left: 0;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    .panel ul li {
-      margin-bottom: 8px;
-    }
-
-    /* ==== Media Gallery Panel ==== */
-    .media-gallery {
-      display: flex;
-      gap: 32px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-    }
-
-    .media-card {
-      width: 300px;
-      height: 450px;
-      border-radius: 24px;
+    .card {
+      background: white;
+      border-radius: 16px;
       overflow: hidden;
-      background-color: #eaeaea;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      flex-shrink: 0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .media-card img,
-    .media-card video {
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
       display: block;
     }
 
-    .spacer {
-      height: 100vh;
-      background-color: #eee;
+    .card-body {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .card-body h4 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .card-body p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .card-body button {
+      margin-top: 1rem;
+      background: #0288d1;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.4rem;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .card-body button:hover {
+      background: #026aa7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-    
+  <header>
+    <h1>JAGA SELATAN</h1>
+    <p>Peta bahaya tsunami desa pesisir DIY — Telusuri. Lihat. Unduh.</p>
+  </header>
 
-  <section class="horizontal-section">
-    <div class="scroll-container" id="scroll-content">
+  <div class="filters">
+    <select id="filterKab">
+      <option value="">Semua Kabupaten</option>
+      <option value="Sleman">Sleman</option>
+      <option value="Bantul">Bantul</option>
+      <option value="Kulon Progo">Kulon Progo</option>
+      <option value="Gunungkidul">Gunungkidul</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Cari nama desa..." />
+  </div>
 
-      <div class="panel">
-        <h2>Brand Strategy</h2>
-        <p>Crafting impactful brands and websites that drive growth and success.</p>
-        <ul>
-          <li>Brand Discovery</li>
-          <li>Brand Positioning</li>
-          <li>Visual Identity Design</li>
-          <li>Brand Guidelines</li>
-        </ul>
-      </div>
+  <div class="gallery" id="gallery"></div>
 
-      <div class="panel">
-        <div class="media-gallery">
-          <div class="media-card">
-            <img src="assets/CR2.jpg" alt="Photo 1" />
-          </div>
-          <div class="media-card">
-            <video src="assets/ambulance.mp4" autoplay muted loop playsinline></video>
-          </div>
-          <div class="media-card">
-            <img src="assets/CR1.jpg" alt="Photo 2" />
-          </div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>Website Design</h2>
-        <p>Custom & responsive websites that engage users and drive conversions.</p>
-        <ul>
-          <li>Website Design</li>
-          <li>Website Support</li>
-          <li>Webflow & Framer</li>
-        </ul>
-      </div>
-
-      <div class="panel">
-        <h2>Marketing Strategy</h2>
-        <p>Strategies that convert and grow audiences on every platform.</p>
-        <ul>
-          <li>Social Media Strategy</li>
-          <li>Ad Campaigns</li>
-          <li>Email Marketing</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="spacer"></div>
-
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script>
-    gsap.registerPlugin(ScrollTrigger);
+    const maps = [
+      { nama: 'Desa Caturharjo', kabupaten: 'Sleman', image: 'assets/peta1.jpg' },
+      { nama: 'Desa Parangtritis', kabupaten: 'Bantul', image: 'assets/peta2.jpg' },
+      { nama: 'Desa Kalibiru', kabupaten: 'Kulon Progo', image: 'assets/peta3.jpg' },
+      { nama: 'Desa Tepus', kabupaten: 'Gunungkidul', image: 'assets/peta4.jpg' },
+    ];
 
-    const scrollContent = document.getElementById("scroll-content");
+    const gallery = document.getElementById('gallery');
+    const filterKab = document.getElementById('filterKab');
+    const searchInput = document.getElementById('searchInput');
 
-    gsap.to(scrollContent, {
-      x: () => -(scrollContent.scrollWidth - document.documentElement.clientWidth) + "px",
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".horizontal-section",
-        start: "top top",
-        end: () => "+=" + scrollContent.scrollWidth,
-        scrub: true,
-        pin: true,
-        anticipatePin: 1
+    function renderGallery() {
+      const keyword = searchInput.value.toLowerCase();
+      const kabFilter = filterKab.value;
+      gallery.innerHTML = '';
+
+      const filtered = maps.filter(
+        (item) =>
+          item.nama.toLowerCase().includes(keyword) &&
+          (kabFilter === '' || item.kabupaten === kabFilter)
+      );
+
+      if (filtered.length === 0) {
+        gallery.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Tidak ada peta ditemukan.</p>';
       }
-    });
-  </script>
 
+      filtered.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${item.image}" alt="${item.nama}" />
+          <div class="card-body">
+            <h4>${item.nama}</h4>
+            <p>${item.kabupaten}</p>
+            <a href="${item.image}" download>
+              <button>Unduh PNG</button>
+            </a>
+          </div>
+        `;
+        gallery.appendChild(card);
+      });
+    }
+
+    filterKab.addEventListener('change', renderGallery);
+    searchInput.addEventListener('input', renderGallery);
+    renderGallery();
+  </script>
 </body>
 </html>

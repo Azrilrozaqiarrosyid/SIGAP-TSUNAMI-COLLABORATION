@@ -27,62 +27,6 @@
 
 </head>
 <style>
-
-  .carousel-item img {
-    object-fit: cover;
-    height: 100vh;
-    filter: brightness(70%);
-    transition: transform 3s ease;
-  }
-
-  .carousel-item.active img {
-    transform: scale(1.05);
-  }
-
-  .carousel-caption {
-    bottom: 20%;
-    animation-duration: 1s;
-  }
-
-  .carousel-caption h2,
-  .carousel-caption h5,
-  .carousel-caption h3,
-  .carousel-caption p {
-    animation: fadeInUp;
-    animation-duration: 1.2s;
-    animation-fill-mode: both;
-  }
-
-  .carousel-caption h2 {
-    animation-delay: 0.2s;
-  }
-
-  .carousel-caption h5 {
-    animation-delay: 0.4s;
-  }
-
-  .carousel-caption h3 {
-    animation-delay: 0.6s;
-  }
-
-  .carousel-caption p {
-    animation-delay: 0.8s;
-  }
-
-  .carousel-indicators [data-bs-target] {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #0d6efd;
-    opacity: 0.7;
-    transition: 0.3s;
-  }
-
-  .carousel-indicators .active {
-    opacity: 1;
-    transform: scale(1.3);
-  }
-
   .navbar {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.8);
@@ -167,37 +111,6 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     border-color: #0d6efd;
     z-index: 10;
-  }
-
-  /* Glowing background effect */
-  .data-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(13, 110, 253, 0.2), transparent);
-    transform: scale(0);
-    transition: transform 0.5s ease;
-    z-index: -1;
-  }
-
-  .data-card:hover::before {
-    transform: scale(1);
-  }
-
-  /* Icon/gambar animasi saat hover */
-  .preview-img {
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-    margin-bottom: 1.2rem;
-    transition: transform 0.5s ease;
-  }
-
-  .data-card:hover .preview-img {
-    transform: translateY(-10px) scale(1.1) rotate(-2deg);
   }
 
   /* Text efek */
@@ -351,7 +264,7 @@
       height: 450px;
       border-radius: 24px;
       overflow: hidden;
-      background-color: #eaeaea;
+      background-color: #000000;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       flex-shrink: 0;
     }
@@ -365,8 +278,8 @@
     }
 
     .spacer {
-      height: 100vh;
-      background-color: #eee;
+      height: 50vh;
+      background-color: #000000;
     }
     .interactive-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -515,8 +428,6 @@
   max-height: 200px;
 }
 
-
-
 </style>
 
 <body>
@@ -548,8 +459,6 @@
       </div>
     </div>
   </nav>
-
-  
 
   <section style="background-color: #ffffff; padding: 60px 20px; text-align: center;">
   <h2 style="font-size: 3rem; font-weight: bold; margin: 0; display: inline-block; position: relative; padding-bottom: 10px;">
@@ -724,20 +633,19 @@
   </div>
 </section>
 
-<!-- Footer -->
-    <footer class="bg-white text-dark py-0 mt-0 border-top">
-      <div class="container text-center">
-        <div class="mb-3">
-          <a href="https://instagram.com" class="text-dark mx-2 fs-5"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com" class="text-dark mx-2 fs-5"><i class="fab fa-twitter"></i></a>
-          <a href="https://t.me" class="text-dark mx-2 fs-5"><i class="fab fa-telegram"></i></a>
-          <a href="https://wa.me" class="text-dark mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="mb-0 small text-muted">
-          &copy; 2025 SIGAP TSUNAMI
-        </p>
+<footer class="bg-white text-dark py-4 border-top">
+    <div class="container text-center">
+      <div class="mb-3">
+        <a href="https://instagram.com" class="text-dark mx-2 fs-5"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com" class="text-dark mx-2 fs-5"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me" class="text-dark mx-2 fs-5"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me" class="text-dark mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
       </div>
-    </footer>
+      <p class="mb-0 small text-muted">
+        &copy; 2025 SIGAP TSUNAMI
+      </p>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -745,10 +653,20 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script>
-    gsap.registerPlugin(ScrollTrigger);
+  // Pastikan plugin ScrollTrigger terdaftar
+  gsap.registerPlugin(ScrollTrigger);
 
+  // Tunggu hingga halaman dan elemen DOM siap
+  window.addEventListener("load", () => {
     const scrollContent = document.getElementById("scroll-content");
 
+    // Pastikan elemen target ada
+    if (!scrollContent) {
+      console.warn("Elemen #scroll-content tidak ditemukan!");
+      return;
+    }
+
+    // Buat animasi horizontal scroll dengan ScrollTrigger
     gsap.to(scrollContent, {
       x: () => -(scrollContent.scrollWidth - document.documentElement.clientWidth) + "px",
       ease: "none",
@@ -758,10 +676,20 @@
         end: () => "+=" + scrollContent.scrollWidth,
         scrub: true,
         pin: true,
-        anticipatePin: 1
+        anticipatePin: 1,
+        onUpdate: () => {
+          // Tambahkan styling ke pin-spacer setelah terbentuk
+          const spacer = document.querySelector(".pin-spacer");
+          if (spacer) {
+            spacer.style.backgroundColor = "black"; // ganti warna background di sini
+            spacer.style.transition = "background-color 0s ease-in-out";
+          }
+        }
       }
     });
-  </script>
+  });
+</script>
+
   <script>
   document.querySelectorAll('.faq-question-custom').forEach(button => {
     button.addEventListener('click', () => {
@@ -770,7 +698,5 @@
     });
   });
 </script>
-
 </body>
-
 </html>

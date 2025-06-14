@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAP TSUNAMI DIY</title>
+
+  <!-- Bootstrap & Icon -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- AOS & Animate -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .navbar {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.9);
+      transition: background 0.3s ease-in-out;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand span {
+      background: linear-gradient(90deg, #0dcaf0, #0d6efd);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #0d6efd;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: #0d6efd !important;
+      transform: translateY(-2px);
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      background: linear-gradient(135deg, #0288d1, #26c6da);
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 2px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInDown 1s;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      animation: fadeInUp 1.2s;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 2rem 1rem 0;
+    }
+
+    .filters select,
+.filters input {
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: 2px solid #ccc; /* awalnya abu-abu */
+  font-size: 1rem;
+  min-width: 200px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+    /* Untuk input search */
+#searchInput:focus {
+  border-color: #007bff; /* Biru */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2); /* Opsional efek glow */
+}
+
+/* Untuk select dropdown */
+#filterKab:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.2rem 1.5rem;
+    }
+
+    .card-body h4 {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+
+    .card-body p {
+      margin: 0 0 1rem;
+      color: #888;
+      font-size: 0.95rem;
+    }
+
+    .card-body button {
+      width: 100%;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      padding: 0.75rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card-body button:hover {
+      background-color: #1eceff;
+      transform: scale(1.03);
+    }
+
+    .card-body button:active {
+      transform: scale(0.98);
+    }
+
+    footer a:hover {
+      color: #007BFF !important;
+      transition: 0.3s;
+    }
+
+    .hero-header {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+  background: linear-gradient(120deg, #0d6efd, #26c6da, #90e0ef);
+  background-size: 300% 300%;
+  animation: gradientBG 10s ease infinite;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-header h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.hero-header .lead {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.hero-header .btn {
+  border-radius: 50px;
+  padding: 0.7rem 1.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-header .btn:hover {
+  background-color: white;
+  color: #0077b6;
+  transform: scale(1.05);
+}
+
+.header-icon i {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate_animated animate_fadeInDown">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <span>SIGAP TSUNAMI</span> - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="informasi.html">Informasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="Map.html">Peta</a></li>
+          <li class="nav-item"><a class="nav-link" href="Tentang.html">Tentang</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<header class="hero-header">
+  <div class="container">
+    <div class="header-icon mb-3">
+      <i class="bi bi-tsunami display-4"></i>
+    </div>
+    <h1 class="display-5 fw-bold animate__animated animate__fadeInDown">JAGA SELATAN</h1>
+    <p class="lead animate__animated animate__fadeInUp">Peta bahaya tsunami desa pesisir DIY — Telusuri. Lihat. Unduh.</p>
+    <a href="#gallery" class="btn btn-outline-light btn-lg mt-3 animate__animated animate__fadeInUp">
+      <i class="bi bi-search"></i> Telusuri Sekarang
+    </a>
+  </div>
+</header>
+
+
+  <!-- Rest of body remains unchanged -->
+
+
+  <div class="filters">
+    <select id="filterKab">
+      <option value="">Semua Kabupaten</option>
+      <option value="Sleman">Sleman</option>
+      <option value="Bantul">Bantul</option>
+      <option value="Kulon Progo">Kulon Progo</option>
+      <option value="Gunungkidul">Gunungkidul</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Cari nama desa..." />
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  <!-- Modal Preview -->
+  <div id="modal" class="modal">
+    <span class="close" id="modalClose">&times;</span>
+    <div class="modal-content" id="modalContent">
+      <img id="modalImg" src="" alt="Preview Peta" />
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="bg-white text-dark py-4 mt-5 border-top">
+    <div class="container text-center">
+      <div class="mb-3">
+        <a href="https://instagram.com" class="text-dark mx-2 fs-5"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com" class="text-dark mx-2 fs-5"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me" class="text-dark mx-2 fs-5"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me" class="text-dark mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="mb-0 small text-muted">
+        &copy; 2025 SIGAP TSUNAMI
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const maps = [
+      { nama: 'Desa Caturharjo', kabupaten: 'Sleman', image: 'assets/peta bahaya tsunami.jpg' },
+      { nama: 'Desa Parangtritis', kabupaten: 'Bantul', image: 'assets/peta bahaya tsunami.jpg' },
+      { nama: 'Desa Kalibiru', kabupaten: 'Kulon Progo', image: 'assets/peta bahaya tsunami.jpg' },
+      { nama: 'Desa Tepus', kabupaten: 'Gunungkidul', image: 'assets/peta bahaya tsunami.jpg' },
+    ];
+
+    const gallery = document.getElementById('gallery');
+    const filterKab = document.getElementById('filterKab');
+    const searchInput = document.getElementById('searchInput');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalClose = document.getElementById('modalClose');
+
+    function renderGallery() {
+      const keyword = searchInput.value.toLowerCase();
+      const kabFilter = filterKab.value;
+      gallery.innerHTML = '';
+
+      const filtered = maps.filter(
+        (item) =>
+          item.nama.toLowerCase().includes(keyword) &&
+          (kabFilter === '' || item.kabupaten === kabFilter)
+      );
+
+      if (filtered.length === 0) {
+        gallery.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Tidak ada peta ditemukan.</p>';
+      }
+
+      filtered.forEach((item) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${item.image}" alt="${item.nama}" />
+          <div class="card-body">
+            <h4>${item.nama}</h4>
+            <p>${item.kabupaten}</p>
+            <a href="${item.image}" download>
+             <button><i class="bi bi-download"></i> Unduh PNG</button>
+            </a>
+          </div>
+        `;
+        card.querySelector('img').addEventListener('click', () => {
+          modal.style.display = 'block';
+          modalImg.src = item.image;
+          modalImg.alt = item.nama;
+        });
+        gallery.appendChild(card);
+      });
+    }
+
+    filterKab.addEventListener('change', renderGallery);
+    searchInput.addEventListener('input', renderGallery);
+    modalClose.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    renderGallery();
+  </script>
+</body>
+
+</html>

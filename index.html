@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
 
   <!-- AOS & Animate -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -282,6 +284,8 @@
     color: #007BFF !important;
     transition: 0.3s;
   }
+
+
 </style>
 
 <body>
@@ -371,7 +375,6 @@
   <section id="about" class="about-section py-5 bg-light position-relative overflow-hidden">
     <div class="container">
       <div class="row justify-content-between align-items-center g-5">
-
         <!-- YT Animation -->
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
           <div class="ratio ratio-16x9 rounded shadow">
@@ -382,7 +385,6 @@
             </iframe>
           </div>
         </div>
-
         <!-- Text Content -->
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
           <h3 class="fw-bold mb-3 text-gradient display-6">APA ITU <span class="text-primary">TSUNAMI?</span></h3>
@@ -409,8 +411,6 @@
       <h3 class="fw-bold mb-5 text-center text-gradient display-6">
         PENYEBAB <span class="text-primary">TSUNAMI</span>
       </h3>
-
-
       <div class="row align-items-center mb-5">
         <!-- Gambar kiri -->
         <div class="col-md-5" data-aos="fade-right">
@@ -478,36 +478,36 @@
     </div>
   </section>
 
-  <!-- Fitur -->
-  <section id="fitur" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="fw-bold display-4 text-center mb-5">FITUR</h2>
-      <div class="row g-4">
+<section id="galeri-peta" class="position-relative py-5 bg-transparent text-white overflow-hidden" style="min-height: 100vh;">
+  <!-- Lottie Animation sebagai background full -->
+  <div class="position-absolute top-0 start-0 w-100 h-100 z-0">
+    <dotlottie-player 
+      src="https://lottie.host/17ec0310-9e79-4dd3-8363-3e32b74d308a/LQNq1nuSCq.lottie"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay
+      style="width: 100%; height: 100%; object-fit: cover;">
+    </dotlottie-player>
+  </div>
 
-        <div class="col-md-6">
-          <div class="d-flex flex-column flex-md-row align-items-center bg-white shadow-lg p-4 rounded h-100">
-            <img src="assets/peta bahaya tsunami.jpg" alt="Peta Desa" class="rounded-circle me-md-4 mb-3 mb-md-0"
-              style="width: 120px; height: 120px; object-fit: cover;">
-            <div class="text-center text-md-start">
-              <h4 class="fw-bold">Peta Digital Bahaya Tsunami Skala Desa di DIY</h4>
-              <a href="https://drive.google.com/drive/folders/1HvHgUaalogY5RMrhhYcQKtbPR_GO_6b8?usp=sharing" class="btn btn-outline-primary mt-2">Lihat Peta</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="d-flex flex-column flex-md-row align-items-center bg-white shadow-lg p-4 rounded h-100">
-            <img src="assets/LOGOBPBD.png" alt="Peta Interaktif" class="rounded-circle me-md-4 mb-3 mb-md-0"
-              style="width: 120px; height: 120px; object-fit: cover;">
-            <div class="text-center text-md-start">
-              <h4 class="fw-bold">Peta Interaktif Bahaya Tsunami Skala Kabupaten di DIY</h4>
-              <a href="Map.html" class="btn btn-outline-primary mt-2">Lihat Peta</a>
-            </div>
-          </div>
-        </div>
+  <!-- Konten di atas -->
+  <div class="container position-relative z-1 py-5 text-center">
+    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+      <div class="col-lg-10" data-aos="zoom-in" data-aos-duration="1000">
+        <h2 class="display-5 fw-bold text-gradient mb-4">Eksplorasi <span class="text-primary">Galeri Peta</span></h2>
+        <p class="fs-5 mb-4">
+          Visualisasi data lokasi rawan bencana, jalur evakuasi, titik kumpul, dan fasilitas publik. 
+          Temukan dan pahami lingkungan sekitarmu dengan lebih jelas.
+        </p>
+        <a href="Galeri.html" 
+           class="btn btn-outline-primary px-4 py-2 fs-5 rounded-pill shadow-sm" style="transition: all 0.3s ease;">
+           Jelajahi Sekarang
+        </a>
       </div>
     </div>
-    </section>
+  </div>
+</section>
 
 
     <!-- Information -->
@@ -598,12 +598,8 @@
               </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
-
-
-
 
     <!-- Footer -->
     <footer class="bg-white text-dark py-4 mt-5 border-top">
@@ -620,8 +616,6 @@
       </div>
     </footer>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -631,6 +625,8 @@
         img.addEventListener('mouseout', () => img.style.transform = 'scale(1)');
       });
     </script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
 </body>
 
 </html>
