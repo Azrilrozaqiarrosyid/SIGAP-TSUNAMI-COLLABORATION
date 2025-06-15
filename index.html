@@ -284,42 +284,54 @@
     color: #007BFF !important;
     transition: 0.3s;
   }
+  
+  .exact-underline {
+  text-decoration-line: underline;
+  text-decoration-color: #0d6efd; /* Bootstrap primary */
+  text-decoration-thickness: 2px; /* Atur ketebalan */
+  text-underline-offset: 0.1em; /* Atur jarak ke huruf, kecil biar nempel */
+}
+
 
 
 </style>
 
 <body>
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate_animated animate_fadeInDown">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <span>SIGAP TSUNAMI</span> - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse animate_animated animate_fadeInRight" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Beranda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#fitur">Fitur</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="informasi.html">Informasi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Map.html">Peta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="Tentang.html">Tentang</a>
-          </li>
-        </ul>
-      </div>
+ <!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm animate_animated animate_fadeInDown">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+      <img src="assets/logo.png" alt="Logo SIGAP" height="40" />
+      <span>
+        SIGAP TSUNAMI - ꦱꦶꦒꦥ꧀ꦠꦱꦸꦤꦩꦶ
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse animate_animated animate_fadeInRight" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#galeri-peta">Galeri</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="informasi.html">Informasi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Map.html">Peta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Tentang.html">Tentang</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- isi utama -->
   <div id="carouselExampleCaptions" class="carousel slide">
@@ -491,20 +503,24 @@
     </dotlottie-player>
   </div>
 
-  <!-- Konten di atas -->
-  <div class="container position-relative z-1 py-5 text-center">
-    <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
-      <div class="col-lg-10" data-aos="zoom-in" data-aos-duration="1000">
-        <h2 class="display-5 fw-bold text-gradient mb-4">Eksplorasi <span class="text-primary">Galeri Peta</span></h2>
-        <p class="fs-5 mb-4">
-          Visualisasi data lokasi rawan bencana, jalur evakuasi, titik kumpul, dan fasilitas publik. 
-          Temukan dan pahami lingkungan sekitarmu dengan lebih jelas.
-        </p>
-        <a href="Galeri.html" 
-           class="btn btn-outline-primary px-4 py-2 fs-5 rounded-pill shadow-sm" style="transition: all 0.3s ease;">
-           Jelajahi Sekarang
-        </a>
-      </div>
+  <!-- Konten Floating -->
+  <div class="container position-relative z-1 d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="bg-white bg-opacity-10 backdrop-blur-lg text-white p-5 rounded-4 shadow-lg text-center" data-aos="zoom-in" data-aos-duration="1000" style="max-width: 800px;">
+      <h2 class="display-5 fw-bold text-gradient mb-4" data-aos="fade-up" data-aos-duration="1000">Eksplorasi <span class="text-primary">Galeri Peta</span></h2>
+     <p class="fs-3 fw-bold mb-4 exact-underline" data-aos="zoom-in-up" data-aos-duration="1200">
+  Kenali, Telusuri, dan Rencanakan: Galeri Peta untuk Mitigasi Bencana yang Lebih Baik.
+</p>
+
+
+      <p class="fs-5 mb-4" data-aos="fade-up" data-aos-duration="1000">
+        Galeri ini menyajikan visualisasi spasial yang mencakup zona rawan bencana tsunami, jalur evakuasi, titik kumpul, dan fasilitas publik penting. 
+        Temukan informasi penting dengan mudah dan pahami kondisi lingkungan sekitar Anda untuk meningkatkan kesiapan dan keselamatan bersama.
+      </p>
+      <a href="Galeri.html"
+         class="btn btn-outline-primary px-4 py-2 fs-5 rounded-pill shadow-sm"
+         style="transition: all 0.3s ease;">
+         Jelajahi Sekarang
+      </a>
     </div>
   </div>
 </section>
@@ -605,10 +621,10 @@
     <footer class="bg-white text-dark py-4 mt-5 border-top">
       <div class="container text-center">
         <div class="mb-3">
-          <a href="https://instagram.com" class="text-dark mx-2 fs-5"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com" class="text-dark mx-2 fs-5"><i class="fab fa-twitter"></i></a>
-          <a href="https://t.me" class="text-dark mx-2 fs-5"><i class="fab fa-telegram"></i></a>
-          <a href="https://wa.me" class="text-dark mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/stageofsleman/" class="text-dark mx-2 fs-5"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/bmkgjogja" class="text-dark mx-2 fs-5"><i class="fab fa-twitter"></i></a>
+          <a href="https://t.me/s/InaTEWS_BMKG" class="text-dark mx-2 fs-5"><i class="fab fa-telegram"></i></a>
+          <a href="https://wa.me/+62895368777957" class="text-dark mx-2 fs-5"><i class="fab fa-whatsapp"></i></a>
         </div>
         <p class="mb-0 small text-muted">
           &copy; 2025 SIGAP TSUNAMI
